@@ -7,7 +7,7 @@
 		<title>Jacob Stanaford's Portfolio Website </title>
 		  <link rel="stylesheet" type="text/css" href="Stylesheet/JacobS_CSSFinal.css">
 		  <script src="JS/JacobS_PortfolioProj.js"></script>
-		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> <!-- We use a little bit of jQuery on this site now -->
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> <!--  a little bit of jQuery on this site -->
 	</head>
 
 <!------------------------------------------------------------------------------END HEADER ------------------------------------------------------------------->
@@ -27,13 +27,13 @@
 <!-- Navbar -->
 	<div class="Navbar">
 		<a class="active" href="#Home">Home</a> 
-		<a href="#Slideshow">Slideshow</a> <!-- This is a new section -->
+		<a href="#Slideshow">Slideshow</a> 
 		<a href="#About">About</a>
 		<a href="#GitHub">GitHub</a>
-		<a onclick="openForm()">Contact</a> <!-- This makes it so that our openForm function runs when we click Contact on the nav bar -->
+		<a onclick="openForm()">Contact</a> <!-- This makes it so that the openForm function runs when the user click Contact on the nav bar -->
 	</div>
 
-<!-- This allows us to close the form when we click outside the nav bar or contact form -->
+<!-- This allows the user to close the form when they click outside the nav bar or contact form -->
 <div class="btn cancel" onclick="closeForm()">
 
 <!-- Home -->
@@ -54,15 +54,16 @@
 			<p> 
 			  <strong>
 					<center>
+						<br>
+						Hello, my name is Jacob Stanaford! Welcome to my portfolio website <br>
+						I am beyond excited to share my experiences and background on this site!<br>
+						Thank you for stopping by and enjoy!<br><br>
 						<q>A programming language is for thinking about programs,
 						<br>not for expressing programs you've already thought of.
                         <br>It should be a pencil, not a pen.
 						</q>	
 						<br>-Paul Graham<br>
 						<br>
-						Hello, my name is Jacob Stanaford! Welcome to my portfolio website <br>
-						I am beyond excited to share my experiences and background on this site!<br>
-						<br>Thank you for stopping by and enjoy! 
 					</center>	
 			  </strong>				
 			</p> 
@@ -125,7 +126,7 @@
     </div>
   </div>
 
-<!-- We included our JS function within this file to ensure it was given precedence, this function covers the slideshow -->
+<!-- I included our JS function within this file to ensure it was given precedence, this function covers the slideshow -->
   <script>
     var slideIndex = 1;
 	  showSlides(slideIndex);
@@ -160,7 +161,7 @@
   
 	<div class="Column_1"> <!-- Right column -->
 	  <h1>About</h2>
-	    <p>I am currently studying software development, and I intend to become a Junior Developer in the near future! <br><br>I am a current student of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, Python and more! <br><br>I am very exited to enter the field of software development and would love to work with you on your project. <a href="#Contact">Contact</a> me below!</p>
+	    <p>I have a serious passon for software development, and I am currently seeking to enter the world of computer science as a junior developer! <br><br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Software Developer Boot Camp, and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, and Python! Additionally, I have experience working in a team setting on a live project and project management. <br><br>I am very exited to enter the field of software development and would love to work with you on your project! <a href="#Contact">Contact</a> me below!</p>
 	</div>
   </div>
 
@@ -182,7 +183,7 @@
   <div id="Contact"> 
     <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button>
 	  <div class="form-popup" id="myForm">
-	    <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container"> <!-- Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
+	    <form action="mailto:jakestanaford@gmail.com" method="POST" class="form-container"> <!-- Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
 		<h1>Contact</h1>
 			<label for="name"><b>Name</b></label>
 			  <input type="text" placeholder="Type your name here" name="name" required>
@@ -202,7 +203,7 @@
 <!-- Footer section -->	
 	<footer>
 	  <p>
-	    <center>This is a project completed in fullfilment of a course through: &copy Prosper Consulting Inc.,  <a href="https://learncodinganywhere.com/">The Tech Academy</a></center><br>
+	    <center>  <a href="https://learncodinganywhere.com/">The Tech Academy</a></center><br>
       </p>
 	</footer>
 
