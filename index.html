@@ -43,14 +43,31 @@
                     <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                         <span class="sr-only">Open main menu</span>
                         <!-- Menu icon -->
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg id="menu-icon" class="block h-6 w-6 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- X icon -->
+                        <svg id="close-icon" class="hidden h-6 w-6 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-secondary/95 backdrop-blur-sm z-40 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#about" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">About</a>
+            <a href="#languages-tools" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">Languages & Tools</a>
+            <a href="#experience" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">Experience</a>
+            <a href="#education" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">Education</a>
+            <a href="#github" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">GitHub</a>
+            <a href="#about-me" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">About Me</a>
+            <a href="#contact" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">Contact</a>
+        </div>
+    </div>
 
     <!-- Main content sections -->
     <main class="pt-16">
