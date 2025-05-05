@@ -44,6 +44,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 "Error handling with user feedback"
             ],
             hasSlider: false
+        },
+        project3: {
+            title: "Complyt WooCommerce Integration",
+            image: "img/gallery/complyt/admin.png",
+            description: "A WordPress plugin that maps WooCommerce orders to Complyt customers for tax compliance purposes. Based on the Complyt API: https://docs.complyt.io/doc-557000",
+            github: "https://github.com/jstanaford/wp-complyt-integration",
+            technologies: ["WordPress", "WooCommerce", "PHP", "JavaScript", "REST API", "Tax Compliance"],
+            features: [
+                "Automatic tax code mapping by product SKU",
+                "Integration with Complyt's tax compliance API",
+                "Admin interface for managing tax settings",
+                "Detailed logging for troubleshooting"
+            ],
+            requirements: [
+                "WordPress 5.0 or higher",
+                "WooCommerce 4.0 or higher",
+                "PHP 7.4 or higher"
+            ],
+            installation: [
+                "Upload the plugin files to the `/wp-content/plugins/wp-complyt-integration` directory",
+                "Activate the plugin through the 'Plugins' screen in WordPress",
+                "Configure the plugin settings under the Complyt menu in WordPress admin"
+            ],
+            hasSlider: false,
+            hasRequirements: true,
+            hasInstallation: true
         }
     };
 
@@ -152,6 +178,46 @@ document.addEventListener('DOMContentLoaded', function() {
             listItem.textContent = feature;
             featuresContainer.appendChild(listItem);
         });
+        
+        // Show or hide requirements section
+        const requirementsSection = document.getElementById('requirements-section');
+        const requirementsContainer = document.getElementById('modal-requirements');
+        
+        if (project.hasRequirements) {
+            requirementsSection.classList.remove('hidden');
+            requirementsContainer.innerHTML = '';
+            project.requirements.forEach(requirement => {
+                const listItem = document.createElement('li');
+                listItem.textContent = requirement;
+                requirementsContainer.appendChild(listItem);
+            });
+        } else {
+            requirementsSection.classList.add('hidden');
+        }
+        
+        // Show or hide installation section
+        const installationSection = document.getElementById('installation-section');
+        const installationContainer = document.getElementById('modal-installation');
+        
+        if (project.hasInstallation) {
+            installationSection.classList.remove('hidden');
+            installationContainer.innerHTML = '';
+            project.installation.forEach((step, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = step;
+                installationContainer.appendChild(listItem);
+            });
+        } else {
+            installationSection.classList.add('hidden');
+        }
+        
+        // Show or hide code samples section for Python project
+        const codeSamplesSection = document.getElementById('code-samples');
+        if (projectId === 'project2') { // Python MyMoveApp
+            codeSamplesSection.classList.remove('hidden');
+        } else {
+            codeSamplesSection.classList.add('hidden');
+        }
     }
     
     // Open modal when clicking on a desktop icon
