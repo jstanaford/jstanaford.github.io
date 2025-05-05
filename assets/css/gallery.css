@@ -1,0 +1,137 @@
+/* Gallery Desktop Styles */
+
+/* Desktop icon hover effects */
+.desktop-icon {
+    transition: all 0.2s ease;
+}
+
+.desktop-icon:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon container hover effects */
+.desktop-icon-container:hover svg {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+.desktop-icon-container svg {
+    transition: all 0.3s ease;
+}
+
+/* Custom cursor for desktop elements */
+.desktop-icon {
+    cursor: pointer;
+}
+
+/* Image Slider Styles */
+.slider-container {
+    width: 100%;
+    position: relative;
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.slider-wrapper img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.slider-dot.active {
+    transform: scale(1.2);
+}
+
+/* Desktop background enhancement */
+.desktop-background {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Desktop icon container */
+.desktop-icon-container {
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Text shadow for better readability on desktop background */
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Modal animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+#project-modal {
+    animation: fadeIn 0.3s ease-out;
+}
+
+#project-modal > div:last-child {
+    animation: slideUp 0.3s ease-out;
+}
+
+/* Technology badges */
+.tech-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(124, 58, 237, 0.6);
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Desktop wallpaper enhancements */
+.desktop-wallpaper-pattern {
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2) 2%, transparent 0%),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.2) 2%, transparent 0%);
+    background-size: 60px 60px;
+}
+
+/* Add some subtle desktop-style animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.desktop-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Custom scrollbar for the modal */
+#project-modal ::-webkit-scrollbar {
+    width: 8px;
+}
+
+#project-modal ::-webkit-scrollbar-track {
+    background: rgba(31, 41, 55, 0.5);
+    border-radius: 10px;
+}
+
+#project-modal ::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.5);
+    border-radius: 10px;
+}
+
+#project-modal ::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.8);
+}

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacob Stanaford | Project Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        secondary: '#2d2d2d',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/app.css?v=1.1.1">
+    <link rel="stylesheet" href="assets/css/gallery.css?v=1.0.0">
+</head>
+<body class="bg-primary min-h-screen text-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-secondary/90 backdrop-blur-sm shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html">
+                        <img src="img/jacobstanaford.jpeg" alt="Developer Photo" class="h-16 w-16 rounded-full border-2 border-gray-600 shadow" />
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html#about" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">About</a>
+                        <a href="index.html#languages-tools" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">Languages & Tools</a>
+                        <a href="index.html#experience" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">Experience</a>
+                        <a href="index.html#education" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">Education</a>
+                        <a href="index.html#github" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">GitHub</a>
+                        <a href="index.html#about-me" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">About Me</a>
+                        <a href="index.html#contact" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">Contact</a>
+                        <a href="gallery.html" class="px-3 py-2 rounded-md text-sm font-medium bg-purple-600 text-white hover:bg-purple-700 transition-colors">Gallery</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Menu icon -->
+                        <svg id="menu-icon" class="block h-6 w-6 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- X icon -->
+                        <svg id="close-icon" class="hidden h-6 w-6 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-secondary/95 backdrop-blur-sm z-40 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="index.html#about" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">About</a>
+            <a href="index.html#languages-tools" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">Languages & Tools</a>
+            <a href="index.html#experience" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">Experience</a>
+            <a href="index.html#education" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">Education</a>
+            <a href="index.html#github" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">GitHub</a>
+            <a href="index.html#about-me" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">About Me</a>
+            <a href="index.html#contact" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">Contact</a>
+            <a href="gallery.html" class="text-xl font-medium text-purple-300 font-bold">Gallery</a>
+        </div>
+    </div>
+
+    <!-- Main content sections -->
+    <main class="pt-24">
+        <!-- Gallery Header -->
+        <section class="bg-gradient-to-b from-secondary to-primary py-8">
+            <div class="max-w-6xl mx-auto px-4">
+                <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">Project Gallery</h1>
+                <p class="text-lg text-gray-300 text-center max-w-3xl mx-auto">
+                    A showcase of my work and projects. Click on any icon to learn more about each project.
+                </p>
+            </div>
+        </section>
+
+        <!-- Desktop Interface -->
+        <section class="py-12 px-4">
+            <div class="max-w-6xl mx-auto">
+                <!-- Desktop Background -->
+                <div class="relative rounded-xl shadow-2xl p-6 min-h-[600px] desktop-background" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('./img/ubuntu_desktop.jpg');">
+                    <!-- Taskbar -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gray-800/90 backdrop-blur-sm h-12 flex items-center px-4 rounded-b-xl">
+                        <div class="bg-purple-600 rounded-full h-8 w-8 flex items-center justify-center mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="text-white text-sm">Jacob's Project Desktop</div>
+                        <div class="ml-auto text-white text-sm">
+                            <span id="desktop-time">12:00 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Icons Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 pt-4">
+                        <!-- Project 1 - WebDev Tools -->
+                        <div class="desktop-icon" data-project="project1">
+                            <div class="desktop-icon-container rounded-lg p-4 flex flex-col items-center cursor-pointer transition-all transform hover:scale-105">
+                                <div class="w-16 h-16 flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-lg mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                    </svg>
+                                </div>
+                                <span class="text-white text-center font-medium text-shadow">WebDev Tools</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 - Python MyMoveApp -->
+                        <div class="desktop-icon" data-project="project2">
+                            <div class="desktop-icon-container rounded-lg p-4 flex flex-col items-center cursor-pointer transition-all transform hover:scale-105">
+                                <div class="w-16 h-16 flex items-center justify-center bg-gradient-to-r from-blue-600 to-yellow-500 rounded-lg shadow-lg mb-2">
+                                    <!-- Python Logo SVG -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-10 w-10 text-white">
+                                        <path fill="currentColor" d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white text-center font-medium text-shadow">Python MyMoveApp</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Details Modal (hidden by default) -->
+                    <div id="project-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
+                        <div class="fixed inset-0 bg-black bg-opacity-75"></div>
+                        <div class="bg-gray-800 w-full max-w-4xl rounded-lg shadow-xl z-10 relative max-h-[90vh] overflow-y-auto my-4">
+                            <!-- Modal Header -->
+                            <div class="bg-gray-900 p-4 flex items-center justify-between sticky top-0 z-20">
+                                <h3 id="modal-title" class="text-xl font-semibold text-white">Project Title</h3>
+                                <button id="close-modal" class="text-gray-300 hover:text-white">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <!-- Modal Content -->
+                            <div class="p-6">
+                                <!-- Image content at the top -->
+                                <div class="mb-6">
+                                    <!-- Image Slider (for WebDev Tools) -->
+                                    <div id="image-slider" class="hidden">
+                                        <div class="relative">
+                                            <div class="slider-container overflow-hidden rounded-lg shadow-lg">
+                                                <div class="slider-wrapper flex transition-transform duration-300">
+                                                    <img src="img/gallery/webdev/home.png" alt="WebDev Tools Home" class="w-full h-auto flex-shrink-0">
+                                                    <img src="img/gallery/webdev/technology_profiler.png" alt="Technology Profiler" class="w-full h-auto flex-shrink-0">
+                                                    <img src="img/gallery/webdev/port_scanner.png" alt="Port Scanner" class="w-full h-auto flex-shrink-0">
+                                                    <img src="img/gallery/webdev/host_viewer.png" alt="Host Viewer" class="w-full h-auto flex-shrink-0">
+                                                    <img src="img/gallery/webdev/domain_profiler.png" alt="Domain Profiler" class="w-full h-auto flex-shrink-0">
+                                                </div>
+                                            </div>
+                                            <button class="slider-prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-r-lg hover:bg-black/70">
+                                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                                </svg>
+                                            </button>
+                                            <button class="slider-next absolute right-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-l-lg hover:bg-black/70">
+                                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                                </svg>
+                                            </button>
+                                            <div class="slider-dots absolute bottom-2 left-0 right-0 flex justify-center space-x-2">
+                                                <button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white active" data-index="0"></button>
+                                                <button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white" data-index="1"></button>
+                                                <button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white" data-index="2"></button>
+                                                <button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white" data-index="3"></button>
+                                                <button class="slider-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white" data-index="4"></button>
+                                            </div>
+                                        </div>
+                                        <p class="text-xs text-gray-400 mt-2 text-center">Click arrows or dots to navigate through screenshots</p>
+                                    </div>
+                                    
+                                    <!-- Regular Project Image (for other projects) -->
+                                    <img hidden id="modal-image" src="" alt="Project Screenshot" class="w-full rounded-lg shadow-lg object-cover">
+                                </div>
+                                
+                                <!-- GitHub link -->
+                                <div class="mb-6 text-center">
+                                    <a id="modal-github" href="#" target="_blank" class="inline-flex items-center px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg shadow transition">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                        View on GitHub
+                                    </a>
+                                </div>
+                                
+                                <!-- Text content below -->
+                                <div>
+                                    <h4 class="text-lg font-semibold text-purple-300 mb-2">Overview</h4>
+                                    <p id="modal-description" class="text-gray-300 mb-4">Project description here.</p>
+                                    
+                                    <h4 class="text-lg font-semibold text-purple-300 mb-2">Technologies Used</h4>
+                                    <div id="modal-tech" class="flex flex-wrap gap-2 mb-4">
+                                        <!-- Technologies badges will be inserted here -->
+                                    </div>
+                                    
+                                    <h4 class="text-lg font-semibold text-purple-300 mb-2">Key Features</h4>
+                                    <ul id="modal-features" class="list-disc list-inside text-gray-300 mb-6">
+                                        <!-- Features will be inserted here -->
+                                    </ul>
+                                    
+                                    <!-- Code samples section (for Python MyMoveApp) -->
+                                    <div id="code-samples" class="hidden">
+                                        <h4 class="text-lg font-semibold text-purple-300 mb-2">Code Samples</h4>
+                                        
+                                        <div class="mb-4">
+                                            <h5 class="text-md font-medium text-purple-200 mb-2">Main Application Setup</h5>
+                                            <pre class="bg-gray-900 p-4 rounded-lg overflow-x-auto text-xs md:text-sm text-gray-300"><code>from tkinter import *
+import tkinter as tk
+import step121_gui
+import step121_func
+import os 
+
+# This creates the frame for my application
+class ParentWindow(Frame):
+    def __init__(self, master, *args, **kwargs):
+        Frame.__init__(self, master, *args, **kwargs)
+
+        self.master = master
+        self.master.minsize(525,190) 
+        self.master.maxsize(525,190)
+        self.master.title("Check files")
+        self.master.configure(bg="#F0F0F0")
+
+        step121_gui.load_gui(self)</code></pre>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <h5 class="text-md font-medium text-purple-200 mb-2">Tkinter GUI Implementation</h5>
+                                            <pre class="bg-gray-900 p-4 rounded-lg overflow-x-auto text-xs md:text-sm text-gray-300"><code>self.varFirstPlace = StringVar()
+self.varSecondPlace = StringVar()
+
+self.txt_place1 = tk.Entry(self.master,text=self.varFirstPlace,width=60)
+self.txt_place1.grid(row=2,column=2,rowspan=2,columnspan=3,padx=(20,0),pady=(50,0),sticky=N+E+W)
+self.txt_place2 = tk.Entry(self.master,text=self.varSecondPlace,width=60)
+self.txt_place2.grid(row=4,column=2,rowspan=2,columnspan=3,padx=(20,0),pady=(10,0),sticky=N+E+W)
+
+self.btn_add = tk.Button(self.master,width=15,height=1,text='Browse...', command=lambda: step121_func.choosePath(self))
+self.btn_add.grid(row=2,column=0,padx=(15,0),pady=(50,0),sticky=W)
+
+self.btn_add2 = tk.Button(self.master,width=15,height=1,text='Browse...', command=lambda: step121_func.choosePath2(self))
+self.btn_add2.grid(row=4,column=0,padx=(15,0),pady=(10,0),sticky=W)
+
+self.btn_check = tk.Button(self.master,width=15,height=2,text='Move files...', command=lambda: step121_func.iterate(self))
+self.btn_check.grid(row=6,column=0,padx=(15,0),pady=(10,0),sticky=W)
+
+self.btn_close = tk.Button(self.master,width=15,height=2,text='Close Program', command=lambda: step121_func.closeThis(self))
+self.btn_close.grid(row=6,column=4,columnspan=1,padx=(0,0),pady=(10,0),sticky=E)</code></pre>
+                                        </div>
+                                        
+                                        <div>
+                                            <h5 class="text-md font-medium text-purple-200 mb-2">File Operations and SQLite Integration</h5>
+                                            <pre class="bg-gray-900 p-4 rounded-lg overflow-x-auto text-xs md:text-sm text-gray-300"><code>#initial file to be moved
+def choosePath(self):
+    firstlocation = askdirectory()
+    if firstlocation:
+        self.varFirstPlace.set(firstlocation)
+
+#second file location to be moved to
+def choosePath2(self):
+    secondlocation = askdirectory()
+    if secondlocation:
+        self.varSecondPlace.set(secondlocation)
+
+#the iterate function to get the txt files and storing the name and gtmtime into a dictionary from previous exercise
+def iterate(self):
+    myfiles = []
+    mydict = {}
+    firstlocation = self.varFirstPlace.get()
+    secondlocation = self.varSecondPlace.get()
+    myfilelist = os.listdir(path=firstlocation)
+    for file in myfilelist:
+        if file.endswith('.txt'):
+            myfiles.append(file)
+            shutil.move(os.path.join(firstlocation,file),secondlocation)
+            for name in myfiles:
+                mypath = os.path.join(secondlocation, name)
+                mytime = os.path.getmtime(mypath)
+                mydict[name] = mytime
+    makeDatabase(self, mydict)
+
+def makeDatabase(self, mydict):
+    conn = sqlite3.connect('myMove.db')
+    with conn:
+        cur = conn.cursor()
+        cur.execute("CREATE TABLE IF NOT EXISTS tbl_txtfilesmoved( \
+            ID INTEGER PRIMARY KEY AUTOINCREMENT, \
+            col_filename TEXT, \
+            col_time_modified REAL)")
+        for file, value in mydict.items():
+            cur.execute("INSERT INTO tbl_txtfilesmoved (col_filename, col_time_modified) VALUES (?,?)",
+                        (file, mydict[file]))
+            conn.commit()
+        cur.execute("SELECT col_filename, col_time_modified FROM tbl_txtfilesmoved")
+        myrows = cur.fetchall()
+        for myrow in myrows:
+            print(myrow)
+    conn.close()
+    messagebox.showinfo("Message Box", "The txt files were more to: {}".format(self.varSecondPlace.get()))
+
+#closing the window
+def closeThis(self):
+    messagebox.showinfo("Message Box", "Closing now")
+    self.master.destroy()
+    os._exit(0)</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-secondary py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-400 mb-2">© 2023 Jacob Stanaford. All rights reserved.</p>
+            <p class="text-gray-500 text-sm">
+                Built with modern web technologies
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js?v=1.1.1"></script>
+    <script src="assets/js/gallery.js?v=1.0.0"></script>
+</body>
+</html> 
