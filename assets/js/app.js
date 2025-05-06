@@ -15,9 +15,13 @@ let current = 0;
 function updateSlider() {
     const img = document.getElementById('slider-image');
     const caption = document.getElementById('slider-caption');
-    img.src = sliderData[current].src;
-    img.alt = sliderData[current].alt;
-    caption.textContent = sliderData[current].alt;
+    
+    // Only update if elements exist (they might not on certain pages like gallery.html)
+    if (img && caption) {
+        img.src = sliderData[current].src;
+        img.alt = sliderData[current].alt;
+        caption.textContent = sliderData[current].alt;
+    }
 }
 
 // Mobile Menu Functionality
@@ -54,19 +58,30 @@ function closeMobileMenu() {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Slider functionality
-    document.getElementById('slider-prev').addEventListener('click', () => {
-        current = (current - 1 + sliderData.length) % sliderData.length;
-        updateSlider();
-    });
-    document.getElementById('slider-next').addEventListener('click', () => {
-        current = (current + 1) % sliderData.length;
-        updateSlider();
-    });
+    const sliderPrev = document.getElementById('slider-prev');
+    const sliderNext = document.getElementById('slider-next');
+    
+    if (sliderPrev) {
+        sliderPrev.addEventListener('click', () => {
+            current = (current - 1 + sliderData.length) % sliderData.length;
+            updateSlider();
+        });
+    }
+    
+    if (sliderNext) {
+        sliderNext.addEventListener('click', () => {
+            current = (current + 1) % sliderData.length;
+            updateSlider();
+        });
+    }
+    
     updateSlider();
 
     // Mobile menu functionality
     const mobileMenuButton = document.querySelector('.md\\:hidden button');
-    mobileMenuButton.addEventListener('click', toggleMobileMenu);
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+    }
 
     // Close mobile menu when clicking links
     const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
