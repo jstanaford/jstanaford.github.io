@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Slider global variables
+    let currentSlideIndex = 0;
+    let needsSliderReinit = true;
+    const images = [
+        "img/gallery/webdev/home.png", 
+        "img/gallery/webdev/technology_profiler.png", 
+        "img/gallery/webdev/port_scanner.png", 
+        "img/gallery/webdev/host_viewer.png", 
+        "img/gallery/webdev/domain_profiler.png"
+    ];
+    
     // Project data
     const projectData = {
         project1: {
@@ -315,6 +326,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const project = projectData[projectId];
         if (!project) return;
         
+        console.log("Opening project:", projectId, project.title);
+        
         // Set modal title
         document.getElementById('modal-title').textContent = project.title;
         
@@ -346,14 +359,84 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Handle slider if present
         const sliderContainer = document.getElementById('image-slider-container');
+        const sliderImages = document.querySelector('.slider-images');
+        
+        // First, clear any existing content in the slider
+        if (sliderImages) {
+            sliderImages.innerHTML = '';
+            sliderImages.style.transform = 'translateX(0)';
+        }
+        
         if (project.hasSlider) {
             sliderContainer.classList.remove('hidden');
-            // Slider functionality is handled separately
+            
+            // Reset the slider for WebDev Tools (project1)
+            if (projectId === 'project1') {
+                console.log("Initializing WebDev slider, needs reinit:", needsSliderReinit);
+                
+                // Reset current slide index
+                currentSlideIndex = 0;
+                
+                // Make sure the slider images container is visible and properly styled
+                if (sliderImages) {
+                    // Remove any lingering styles first if needed
+                    if (needsSliderReinit) {
+                        sliderImages.removeAttribute('style');
+                    }
+                    
+                    // Set required styles
+                    sliderImages.style.display = 'flex';
+                    sliderImages.style.transition = 'transform 0.5s ease';
+                    sliderImages.style.width = '100%';
+                    sliderImages.style.height = '100%';
+                }
+                
+                // Force re-creation of all images
+                sliderImages.innerHTML = ''; // Ensure it's completely empty
+                console.log("Adding", images.length, "images to slider");
+                
+                images.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = "WebDev Tools Screenshot";
+                    img.className = "h-full w-auto flex-shrink-0 object-contain mx-auto";
+                    img.style.minWidth = '100%';
+                    sliderImages.appendChild(img);
+                });
+                
+                // Create indicators
+                const indicators = document.getElementById('slide-indicators');
+                if (indicators) {
+                    indicators.innerHTML = '';
+                    
+                    images.forEach((_, index) => {
+                        const indicator = document.createElement('button');
+                        indicator.className = `w-3 h-3 rounded-full ${index === 0 ? 'bg-white' : 'bg-gray-400'}`;
+                        indicator.addEventListener('click', () => goToSlide(index));
+                        indicators.appendChild(indicator);
+                    });
+                }
+                
+                // Show slider controls
+                const prevButton = document.getElementById('prev-slide');
+                const nextButton = document.getElementById('next-slide');
+                
+                if (prevButton) prevButton.classList.remove('hidden');
+                if (nextButton) nextButton.classList.remove('hidden');
+                if (indicators) indicators.classList.remove('hidden');
+                
+                // Reset to first slide
+                currentSlideIndex = 0;
+                updateNewSlider();
+                
+                // Reset the flag since we've reinitialized
+                needsSliderReinit = false;
+            }
         } else if (project.image) {
             // Display a single image instead of the slider
             sliderContainer.classList.remove('hidden');
-            const sliderImages = document.querySelector('.slider-images');
-            sliderImages.innerHTML = ''; // Clear any existing images
+            
+            console.log("Setting up single image:", project.image);
             
             const img = document.createElement('img');
             img.src = project.image;
@@ -362,9 +445,13 @@ document.addEventListener('DOMContentLoaded', function() {
             sliderImages.appendChild(img);
             
             // Hide slider controls when showing a single image
-            document.getElementById('prev-slide').classList.add('hidden');
-            document.getElementById('next-slide').classList.add('hidden');
-            document.getElementById('slide-indicators').classList.add('hidden');
+            const prevButton = document.getElementById('prev-slide');
+            const nextButton = document.getElementById('next-slide');
+            const indicators = document.getElementById('slide-indicators');
+            
+            if (prevButton) prevButton.classList.add('hidden');
+            if (nextButton) nextButton.classList.add('hidden');
+            if (indicators) indicators.classList.add('hidden');
         } else {
             sliderContainer.classList.add('hidden');
         }
@@ -641,6 +728,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to open project modal
     function openProjectModal(projectId) {
+        console.log("Opening modal for project:", projectId);
         populateProjectModal(projectId);
         if (projectModal) {
             projectModal.classList.remove('hidden');
@@ -654,14 +742,38 @@ document.addEventListener('DOMContentLoaded', function() {
             projectModal.classList.add('hidden');
             document.body.classList.remove('overflow-hidden');
             
-            // Reset slider controls visibility for next time
+            console.log("Closing modal and completely resetting slider state");
+            
+            // COMPLETELY reset slider content and styles
+            const sliderImages = document.querySelector('.slider-images');
+            if (sliderImages) {
+                // Clear all content
+                sliderImages.innerHTML = '';
+                
+                // Remove all inline styles first
+                sliderImages.removeAttribute('style');
+                
+                // Then set only necessary reset styles
+                sliderImages.style.transform = 'translateX(0)';
+            }
+            
+            // Reset slider controls visibility
             const prevButton = document.getElementById('prev-slide');
             const nextButton = document.getElementById('next-slide');
             const indicators = document.getElementById('slide-indicators');
             
             if (prevButton) prevButton.classList.remove('hidden');
             if (nextButton) nextButton.classList.remove('hidden');
-            if (indicators) indicators.classList.remove('hidden');
+            if (indicators) {
+                indicators.classList.remove('hidden');
+                indicators.innerHTML = '';
+            }
+            
+            // Reset current slide index
+            currentSlideIndex = 0;
+            
+            // Flag to indicate we need to reinitialize the slider on next open
+            needsSliderReinit = true;
         }
     }
     
@@ -714,34 +826,40 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('Could not add floating animation to desktop icons:', error);
     }
     
-    // New slider implementation
-    let currentSlideIndex = 0;
-    const images = [
-        "img/gallery/webdev/home.png", 
-        "img/gallery/webdev/technology_profiler.png", 
-        "img/gallery/webdev/port_scanner.png", 
-        "img/gallery/webdev/host_viewer.png", 
-        "img/gallery/webdev/domain_profiler.png"
-    ];
-
     function initSlider() {
+        console.log("Initializing main slider");
         const sliderContainer = document.querySelector('.slider-images');
-        if (!sliderContainer) return;
+        if (!sliderContainer) {
+            console.warn("Slider container not found");
+            return;
+        }
         
+        // Clear existing content
         sliderContainer.innerHTML = '';
+        console.log("Cleared slider content");
+        
+        // Apply proper styling with transitions
+        sliderContainer.style.display = 'flex';
+        sliderContainer.style.transition = 'transform 0.5s ease';
+        sliderContainer.style.width = '100%';
         
         // Add images to slider
-        images.forEach(src => {
+        images.forEach((src, index) => {
             const img = document.createElement('img');
             img.src = src;
             img.alt = "WebDev Tools Screenshot";
             img.className = "h-full w-auto flex-shrink-0 object-contain mx-auto";
+            img.style.minWidth = '100%';
             sliderContainer.appendChild(img);
+            console.log(`Added image ${index + 1}:`, src);
         });
         
         // Create indicators
         const indicators = document.getElementById('slide-indicators');
-        if (!indicators) return;
+        if (!indicators) {
+            console.warn("Slider indicators not found");
+            return;
+        }
         
         indicators.innerHTML = '';
         
@@ -752,12 +870,18 @@ document.addEventListener('DOMContentLoaded', function() {
             indicators.appendChild(indicator);
         });
         
+        // Reset to first slide
+        currentSlideIndex = 0;
         updateNewSlider();
     }
 
     function updateNewSlider() {
+        console.log("Updating slider to slide:", currentSlideIndex);
         const sliderImages = document.querySelector('.slider-images');
-        if (!sliderImages) return;
+        if (!sliderImages) {
+            console.warn("Slider images container not found");
+            return;
+        }
         
         sliderImages.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
         
