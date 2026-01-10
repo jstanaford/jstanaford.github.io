@@ -237,6 +237,56 @@ document.addEventListener('DOMContentLoaded', function() {
             hasToastNotifications: true,
             hasDevelopment: true,
             hasRemoteUploadApi: true
+        },
+        project6: {
+            title: "Laravel DevOps Monorepo",
+            image: "",
+            description: "A complete Laravel development and deployment toolkit that seamlessly bridges local development, CI/CD, and remote server management. This monorepo combines local development tools, remote deployment utilities, and GitHub Actions workflows to create a seamless development-to-production workflow.",
+            github: "https://github.com/jstanaford/laravel-devops",
+            technologies: [
+                "Bash", 
+                "Shell Scripting", 
+                "Docker", 
+                "Docker Compose", 
+                "GitHub Actions", 
+                "CI/CD", 
+                "Laravel", 
+                "YAML",
+                "SSH",
+                "Automated Deployment"
+            ],
+            features: [
+                "Local Development Tools: Docker-based environment management with intelligent port allocation",
+                "Remote Deployment Tools: Release-based deployment strategy with zero-downtime capabilities",
+                "CI/CD Integration: GitHub Actions workflows for automated deployments",
+                "Intelligent Configuration: Single deploy.yml file controls both local and remote behavior",
+                "Database Management: Automated backups and syncing between environments",
+                "Frontend Development: Integrated Vite dev server with hot-reload",
+                "Interactive Menus: User-friendly CLI interface for all operations",
+                "Auto-Update System: Automatic version checking and updates",
+                "Release Management: Numbered releases with automatic cleanup and rollback support",
+                "Permission Management: Automated file permission fixes",
+                "Shared Files: Automatic symlink management for persistent files"
+            ],
+            requirements: [
+                "Docker and Docker Compose (for local development)",
+                "Bash 4.0+",
+                "curl and unzip (for installation)",
+                "Git (for repository detection)",
+                "SSH access (for remote deployments)",
+                "PHP 8.1+ with Composer (for Laravel projects)",
+                "Node.js and npm (for frontend asset building)"
+            ],
+            installation: [
+                "Clone the repository: git clone https://github.com/jstanaford/laravel-devops.git",
+                "For local tools: curl -L https://YOUR_DEPLOYMENT_DOMAIN/local/install.sh | bash",
+                "For remote tools: Download and extract to your deployment server",
+                "Configure deploy.yml with your server settings",
+                "Set up GitHub Secrets for CI/CD automation"
+            ],
+            hasSlider: false,
+            hasRequirements: true,
+            hasInstallation: true
         }
     };
 
