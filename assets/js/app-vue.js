@@ -419,14 +419,43 @@ if (typeof Vue !== 'undefined') {
   }
 });
 
+  // Hide loading screen function
+  const hideLoadingScreen = () => {
+    const loadingScreen = document.getElementById('vue-loading-screen');
+    if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
+      loadingScreen.classList.add('hidden');
+      // Remove from DOM after fade-out animation completes
+      setTimeout(() => {
+        if (loadingScreen.parentNode) {
+          loadingScreen.parentNode.removeChild(loadingScreen);
+        }
+      }, 500);
+    }
+  };
+
   // Mount the app when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       app.mount('#app');
+      // Hide loading screen after Vue mounts and has time to render
+      // Give it a bit more time to ensure Vue is fully initialized
+      setTimeout(hideLoadingScreen, 500);
     });
   } else {
     app.mount('#app');
+    // Hide loading screen after Vue mounts and has time to render
+    setTimeout(hideLoadingScreen, 500);
   }
 } else {
   console.error('Vue.js is not loaded. Please check the CDN script tag.');
+  // Hide loading screen even if Vue fails to load
+  const loadingScreen = document.getElementById('vue-loading-screen');
+  if (loadingScreen) {
+    loadingScreen.classList.add('hidden');
+    setTimeout(() => {
+      if (loadingScreen.parentNode) {
+        loadingScreen.parentNode.removeChild(loadingScreen);
+      }
+    }, 500);
+  }
 }
