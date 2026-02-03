@@ -26,13 +26,13 @@
       window.THREE = THREE;
     </script>
     <!-- Site content data (all text content) -->
-    <script src="assets/data/site-content.js"></script>
+    <script src="assets/data/site-content.js?v=1.0.1"></script>
     <!-- Portfolio data (included directly, no fetch needed) -->
     <script src="assets/data/portfolio-data.js"></script>
     <!-- Portfolio utilities -->
     <script src="assets/js/portfolio-utils.js"></script>
     <!-- Three.js visualization -->
-    <script src="assets/js/three-viz.js"></script>
+    <script src="assets/js/three-viz.js?v=1.0.1"></script>
     <!-- Three.js hero orbits -->
     <script src="assets/js/hero-orbits.js"></script>
 </head>
@@ -123,7 +123,7 @@
             <div id="hero-three-container" class="absolute inset-0 z-0 pointer-events-none" style="opacity: 0.4;"></div>
             
             <div class="relative z-10 flex flex-col items-center justify-center px-4">
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-center">{{ content.hero?.title || "Jacob Stanaford's Portfolio" }}</h1>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-center">Jacob Stanaford's Portfolio</h1>
                 <p class="text-lg md:text-xl text-center max-w-2xl mb-8">
                     <template v-if="content.hero?.intro?.default">
                         <template v-for="(line, index) in content.hero.intro.default" :key="index">
@@ -508,8 +508,8 @@
 		
 		<div class="w-full h-40 bg-gradient-to-b from-primary via-secondary to-secondary"></div>
 		
-		<!-- Three.js Technology Network Visualization -->
-		<section id="tech-visualization" class="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-secondary via-primary to-secondary py-20 px-4 overflow-hidden">
+		<!-- Three.js Technology Network Visualization (hidden for now - revisit later) -->
+		<section id="tech-visualization" class="hidden relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-secondary via-primary to-secondary py-20 px-4 overflow-hidden">
             <div class="relative z-10 text-center mb-12">
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-purple-100">{{ content.threeVisualization?.title || "Technology Ecosystem" }}</h2>
                 <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
@@ -573,6 +573,16 @@
             </div>
         </transition>
     </main>
+    
+    <footer class="bg-secondary py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-400 mb-2">© <span id="footer-year"></span> Jacob Stanaford. All rights reserved.</p>
+            <p class="text-gray-500 text-sm">
+                Built by a true nerd
+            </p>
+        </div>
+    </footer>
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
     </div>
     <!-- Vue app script -->
     <script src="assets/js/app-vue.js?v=2.0.0"></script>

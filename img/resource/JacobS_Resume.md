@@ -18,11 +18,11 @@ Enthusiastic software developer with a passion for continuously improving educat
 
 **Skills:** 
 
-**Programming  Languages:** PHP, Bash,  JavaScript,  SQL  (MySQL, MariaDB), Liquid, C\#,  HTML,  CSS, Python, Node.JS, TypeScript
+**Programming  Languages:** PHP, Bash,  JavaScript,  SQL  (MySQL, MariaDB, MSSQL), Liquid, C\#,  HTML,  CSS, Python, TypeScript, Lua, VB, and Powershell
 
-**Frameworks & Technologies:** WordPress, Laravel, Shopify, Drupal, Magento, Joomla\!,   Django, .NET, Google Cloud Platform, Expres.js, Jenkins, Ansible, Docker, AWS, Zend Framework, React, CI/CD, Tailwind, Meilisearch, Filament, Livewire, Scrapy, FastAPI, Playwright
+**Frameworks & Technologies:** WordPress, Laravel, Shopify, Drupal, Magento, Joomla\!,   Django, .NET, Google Cloud Platform, Express.js, Angular, Jenkins, Ansible, Docker, AWS, Zend Framework, React, CI/CD, Tailwind, Meilisearch, Filament, Livewire, Scrapy, FastAPI, Playwright, Node.js
 
-**IDE Experience:** PHPStorm, Visual Studio, Sublime, Visual Studio Code,  PyCharm, Cursor
+**IDE Experience:** PHPStorm, Visual Studio, Sublime, Visual Studio Code,  PyCharm, Cursor, & Rider
 
 **AI Model Experience:** Cursor, Claude, Gemini, Github Copilot, Llama, DeepSeek
 
@@ -34,11 +34,11 @@ Enthusiastic software developer with a passion for continuously improving educat
 
 ## **The YGS Group, York, PA**
 
-**Senior Developer | Full Stack Development (full time)              June 2025 – Present**
+**Senior Software Engineer | Full Stack (full time)           June 2025 – February 2026**
 
-* Leading development on enterprise e-commerce platforms, automation systems, and API services across a diverse technology stack spanning Laravel/PHP, .NET/ASP.NET, Node.js/TypeScript, and Python applications.  
-* Built and maintained multiple Laravel/Lunar PHP e-commerce storefronts with payment processing (Authorize.net), shipping integrations (FedEx), and custom template systems for clients.  
-* Developed a comprehensive order processing automation platform with SFTP file transfers, Pace API integration, queue-based job processing via Laravel Horizon, and PDF/Excel file processing capabilities.  
+* Led development teams on enterprise e-commerce platforms, automation systems, and API services across a diverse technology stack spanning Laravel/PHP, .NET/[ASP.NET](http://ASP.NET) with Angular frontend, Node.js/TypeScript, and Python applications.  
+* Built and maintained multiple Laravel/Lunar PHP e-commerce storefronts with payment processing ([Authorize.net](http://Authorize.net), Braintree, etc…), shipping integrations (eg Fedex & USPS), and custom template design \+ systems for clients.  
+* Developed and maintained a comprehensive order processing automation platform with SFTP file transfers, Pace API integration, queue-based job processing via Laravel Horizon, and PDF/Excel file processing capabilities.  
 * Created TypeScript/Express.js microservices including FedEx shipping API wrapper with semantic versioning and Cloudflare bot verification service implementing RFC 9421 HTTP Message Signatures.  
 * Built and maintained advanced Python/Scrapy web scraping platforms with machine learning capabilities, JavaScript rendering via Playwright, and REST API endpoints using Flask and FastAPI.  
 * Implemented CI/CD workflows with GitHub Actions, Docker containerization, and automated deployment systems for multi-environment support (staging, production, development).
@@ -55,7 +55,7 @@ Enthusiastic software developer with a passion for continuously improving educat
 
 ## **Prosper** 	 **IT  Consulting** ,  **Portland,  OR**  
 
-**Software  Developer  Intern  (Full-Time)**                                                          **Dec.** **2019**      
+**Software  Developer  Intern  (Full-Time)**                                                      **Aug \- Dec** **2019**      
 
 * Worked  within  the  Agile  Methodology  (such  as  Scrum) on  a  2-week  sprint      project.
 
@@ -81,7 +81,9 @@ Enthusiastic software developer with a passion for continuously improving educat
 
 * Classes designed to develop skills as software development leaders and high-quality programmers.
 
-* Specific focus & extra curricular courses geared towards machine learning, linear algebra, algorithms and applications.
+* Specific focus & extra curricular courses geared towards machine learning, linear algebra, algorithms and software server architecture 
+
+* Current GPA 4.0 
 
 ## **The  Tech  Academy,**  Computer  Science                                 **Sept.** **2019  –  Dec. 2019** 
 

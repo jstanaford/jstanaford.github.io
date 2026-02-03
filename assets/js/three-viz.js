@@ -171,22 +171,22 @@ function createThreeViz(containerId, portfolioData) {
     const createTextSprite = (text, position) => {
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');
-      canvas.width = 256;
-      canvas.height = 64;
+      canvas.width = 512;
+      canvas.height = 128;
       
       context.fillStyle = 'rgba(0, 0, 0, 0)';
-      context.fillRect(0, 0, 256, 64);
+      context.fillRect(0, 0, 512, 128);
       
-      context.font = 'Bold 20px Arial';
+      context.font = 'Bold 40px Arial';
       // Convert color number to hex string
       const hexColor = '#' + color.toString(16).padStart(6, '0');
       context.fillStyle = hexColor;
       context.strokeStyle = 'rgba(255, 255, 255, 0.3)';
-      context.lineWidth = 2;
+      context.lineWidth = 3;
       context.textAlign = 'center';
       context.textBaseline = 'middle';
-      context.strokeText(text, 128, 32);
-      context.fillText(text, 128, 32);
+      context.strokeText(text, 256, 64);
+      context.fillText(text, 256, 64);
       
       const texture = new THREE.CanvasTexture(canvas);
       const spriteMaterial = new THREE.SpriteMaterial({
@@ -195,7 +195,7 @@ function createThreeViz(containerId, portfolioData) {
         opacity: 0.8
       });
       const sprite = new THREE.Sprite(spriteMaterial);
-      sprite.scale.set(1, 0.25, 1);
+      sprite.scale.set(2, 0.5, 1);
       sprite.position.copy(position);
       sprite.position.y += nodeRadius + 0.5;
       return sprite;
@@ -355,10 +355,10 @@ function createThreeViz(containerId, portfolioData) {
       currentRotation += (targetRotation - currentRotation) * 0.05;
       
       // Rotate the entire helix slowly
-      helixGroup.rotation.y += 0.005 + currentRotation * 0.01;
+      helixGroup.rotation.y += 0.0025 + currentRotation * 0.005;
       
       // Camera slight orbit (optional - creates more dynamic view)
-      cameraAngle = initialCameraAngle + time * 0.05; // Slow orbit
+      cameraAngle = initialCameraAngle + time * 0.025; // Slow orbit
       camera.position.x = Math.cos(cameraAngle) * initialCameraRadius;
       camera.position.y = initialCameraHeight + Math.sin(time * 0.3) * 1; // Slight vertical movement
       camera.position.z = Math.sin(cameraAngle) * initialCameraRadius;
@@ -395,8 +395,8 @@ function createThreeViz(containerId, portfolioData) {
     
     // Rotate strands slightly for extra movement (only when not paused)
     if (!isPaused) {
-      strandGroup1.rotation.y += 0.002;
-      strandGroup2.rotation.y -= 0.002;
+      strandGroup1.rotation.y += 0.001;
+      strandGroup2.rotation.y -= 0.001;
     }
     
     renderer.render(scene, camera);

@@ -385,12 +385,13 @@
     
     <footer class="bg-secondary py-8">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <p class="text-gray-400 mb-2">© 2023 Jacob Stanaford. All rights reserved.</p>
+            <p class="text-gray-400 mb-2">© <span id="footer-year"></span> Jacob Stanaford. All rights reserved.</p>
             <p class="text-gray-500 text-sm">
-                Built with modern web technologies
+                Built by a true nerd
             </p>
         </div>
     </footer>
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 
     <script src="assets/js/app.js?v=1.1.6"></script>
     <script src="assets/js/gallery.js?v=1.0.6"></script>

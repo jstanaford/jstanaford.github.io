@@ -43,9 +43,9 @@ const siteContent = {
     title: "Professional Experience",
     ygsGroup: {
       company: "YGS Group",
-      period: "June 2025 – Present",
-      role: "Senior Software Developer",
-      description: "Leading development on enterprise e-commerce platforms, automation systems, and API services across a diverse technology stack. Projects span from Laravel/PHP, .NET/ASP.NET, Node.js/TypeScript, and Python applications.",
+      period: "June 2025 – February 2026",
+      role: "Senior Software Engineer",
+      description: "Led development on enterprise e-commerce platforms, automation systems, and API services across a diverse technology stack. Projects spanned Laravel/PHP, .NET/ASP.NET, Node.js/TypeScript, and Python applications.",
       contributions: {
         title: "Key Contributions:",
         items: [
@@ -54,20 +54,12 @@ const siteContent = {
             text: "Built and maintained multiple Laravel/Lunar PHP storefronts with payment processing, shipping integrations, and custom template systems"
           },
           {
-            title: "Automation Systems:",
-            text: "Developed comprehensive order processing automation with SFTP, API integrations, and queue-based job processing"
-          },
-          {
             title: "API Services:",
             text: "Created TypeScript/Express.js microservices including FedEx shipping API wrapper and Cloudflare bot verification service"
           },
           {
             title: "Web Scraping:",
             text: "Developed and maintained advanced Python/Scrapy platforms with machine learning capabilities for data collection and analysis"
-          },
-          {
-            title: "DevOps:",
-            text: "Implemented CI/CD workflows, Docker containerization, and automated deployment systems"
           }
         ]
       },
@@ -98,8 +90,8 @@ const siteContent = {
       degree: "Master of Science in Computer Science",
       programLink: "https://www.stevens.edu/program/computer-science-masters",
       programText: "Program Details",
-      period: "2023 – 2029",
-      status: "(currently enrolled)",
+      period: "Fall 2023 – Present",
+      status: "(currently enrolled, 4.0 GPA)",
       description: "The Stevens MSCS program is designed to align with the latest industry trends, preparing graduates for success in areas such as AI, machine learning, business intelligence, analytics, and advanced software development. My coursework emphasized technical proficiency in enterprise software design, mobile and cloud computing, agile methods, and algorithm design.",
       focusAreas: [
         {
@@ -181,7 +173,7 @@ const siteContent = {
   threeVisualization: {
     title: "Technology Ecosystem",
     description: "This helix represents some of my favorite technology stacks and what I love about them. Each technology forms a base pair in the DNA of my development work, connected by rungs that show how these tools come together to create something greater than the sum of their parts. Click on any technology to dive deeper into why I'm passionate about it.",
-    interactionHint: "Click any technology node to see why I love it • Move your mouse to rotate the helix"
+    interactionHint: " • Click any technology node to see why I love it • "
   }
 };
 
