@@ -10,9 +10,9 @@ Full-Stack  Software  Developer
 
  
 
-**Summary:** 
+**Summary:**
 
-Enthusiastic software developer with a passion for continuously improving education and skill set. Self-starter, former educator, and responsible team player dedicated to demonstrating the right skills, mindset, and attitude in any work environment. Experienced in integrating advanced AI models (ChatGPT, Gemini, LLMs) into production applications and designing complex software architectures. Expertise in developing scalable cloud infrastructure with containerized microservices on GCP and CI/CD automation. Currently pursuing a Master's in Computer Science while combining technical precision with creative problem-solving to transform legacy systems into maintainable, future-ready codebases.
+Full-stack software developer with 6+ years of professional experience building and maintaining enterprise web applications. Currently a Software Developer at Ironmark, supporting multi-channel PHP marketing automation platforms and .NET enterprise systems across two acquired companies. Experienced in modern PHP (OOP, Laravel, OpenSwoole), C#/.NET (Framework 4.8, .NET 10, ASP.NET MVC/Core), relational databases (MySQL, PostgreSQL, SQL Server), and RESTful API design. Pursuing a Master's in Computer Science at Stevens Institute of Technology (4.0 GPA) with a focus on software architecture, AI/ML, and enterprise systems.
 
    
 
@@ -30,7 +30,16 @@ Enthusiastic software developer with a passion for continuously improving educat
 
  
 
-**Work  Experience:** 
+**Work  Experience:**
+
+## **Ironmark, Annapolis Junction, MD**
+
+**Software Developer (full time)           February 2026 – Present**
+
+* Building and maintaining the AMMS platform - a high-throughput, multi-tenant PHP 8.4 / OpenSwoole marketing automation system with queue-driven async workflows, multi-client isolation, and integrations with popular third-party business development APIs.
+* Supporting and enhancing Deliver Media's .NET application suite, including a core back-office production system, REST API layer, client-facing analytics dashboard (.NET 10 / ASP.NET Core), and campaign management tools across .NET Framework 4.8 and modern .NET.
+* Designing and maintaining RESTful APIs and system integrations across PHP and .NET ecosystems, including multi-tenant database routing and business intelligence reporting.
+* Collaborating across a dual-stack environment (PHP/MySQL/PostgreSQL and C#/SQL Server) to deliver features, fix production issues, and improve system stability.
 
 ## **The YGS Group, York, PA**
 

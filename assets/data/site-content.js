@@ -41,6 +41,30 @@ const siteContent = {
   
   experience: {
     title: "Professional Experience",
+    ironmark: {
+      company: "Ironmark",
+      period: "February 2026 – Present",
+      role: "Software Developer",
+      description: "Full-stack developer supporting two acquired companies - American Marketing and Deliver Media - across PHP and .NET environments. Primary focus on building and maintaining PHP marketing automation platforms, with secondary responsibility for .NET enterprise applications.",
+      contributions: {
+        title: "Key Contributions:",
+        items: [
+          {
+            title: "PHP Marketing Automation:",
+            text: "Building and maintaining the AMMS platform - a high-throughput, multi-tenant marketing automation system on PHP 8.4 and OpenSwoole async coroutines, with queue-driven workflows, multi-client isolation, and integrations with popular third-party business development APIs"
+          },
+          {
+            title: ".NET Enterprise Systems:",
+            text: "Supporting and enhancing Deliver Media's .NET application suite including a core back-office production system, RESTful API layer, client-facing analytics dashboard (.NET 10), and campaign management tools across .NET Framework 4.8 and modern .NET"
+          },
+          {
+            title: "API & Integration Development:",
+            text: "Designing and maintaining RESTful APIs and integrations across both ecosystems, including async task servers, multi-tenant database routing, and reporting and business intelligence tooling"
+          }
+        ]
+      },
+      technologies: "Technologies: PHP 8.4, OpenSwoole, MySQL, PostgreSQL, C#, .NET Framework 4.8, .NET 10, ASP.NET MVC/Core, SQL Server, Entity Framework, REST APIs, AWS"
+    },
     ygsGroup: {
       company: "YGS Group",
       period: "June 2025 – February 2026",
@@ -148,9 +172,9 @@ const siteContent = {
   aboutMe: {
     title: "ABOUT ME",
     paragraphs: [
-      "With over six years of dedicated education and hands-on experience, I am a passionate software developer who thrives on building impactful solutions. My journey has taken me from earning a Bachelor's in Music Education to completing an intensive software development bootcamp, and now pursuing a Master's in Computer Science at Stevens Institute of Technology.",
-      "I have developed expertise in full-stack web and software development, with a strong foundation in PHP, JavaScript, TypeScript, C#, and modern frameworks. My professional experience includes leading development teams, architecting scalable applications, and collaborating on real-world projects in both educational and corporate settings.",
-      "I am committed to continuous learning, with a focus on AI, machine learning, and cloud technologies. I am always eager to take on new challenges, contribute to innovative teams, and deliver high-quality software that makes a difference."
+      "With over six years of dedicated education and hands-on experience, I am a passionate software developer who thrives on building and maintaining impactful enterprise systems. My journey has taken me from earning a Bachelor's in Music Education to completing an intensive software development bootcamp, and now pursuing a Master's in Computer Science at Stevens Institute of Technology.",
+      "I currently work as a Software Developer at Ironmark, where I build and maintain marketing automation platforms and enterprise back-office applications across PHP and .NET environments. My professional experience spans modern PHP development (Laravel, OpenSwoole async systems), C#/.NET enterprise applications, RESTful API design, and relational database work across MySQL, PostgreSQL, and SQL Server.",
+      "I am committed to continuous learning and delivering high-quality software. Whether modernizing legacy systems, designing async microservice architectures, or collaborating across technology stacks, I bring technical depth, adaptability, and a drive to solve real business problems."
     ],
     resumeText: "View My Resume",
     resumeUrl: "img/resource/JacobS_Resume.pdf"
