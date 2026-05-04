@@ -12,7 +12,7 @@ Full-Stack  Software  Developer
 
 **Summary:**
 
-Full-stack software developer with 6+ years of professional experience building and maintaining enterprise web applications. Currently a Software Developer at Ironmark, supporting multi-channel PHP marketing automation platforms and .NET enterprise systems across two acquired companies. Experienced in modern PHP (OOP, Laravel, OpenSwoole), C#/.NET (Framework 4.8, .NET 10, ASP.NET MVC/Core), relational databases (MySQL, PostgreSQL, SQL Server), and RESTful API design. Pursuing a Master's in Computer Science at Stevens Institute of Technology (4.0 GPA) with a focus on software architecture, AI/ML, and enterprise systems.
+Full-stack software engineer with 6+ years of professional experience building and maintaining enterprise web applications. Currently a Software Engineer at Ironmark, supporting multi-channel PHP marketing automation platforms and .NET enterprise systems across two acquired companies. Experienced in modern PHP (OOP, Laravel, OpenSwoole), C#/.NET (Framework 4.8, .NET 10, ASP.NET MVC/Core), relational databases (MySQL, PostgreSQL, SQL Server), and RESTful API design. Pursuing a Master's in Computer Science at Stevens Institute of Technology (4.0 GPA) with a focus on software architecture, AI/ML, and enterprise systems.
 
    
 
@@ -34,7 +34,7 @@ Full-stack software developer with 6+ years of professional experience building 
 
 ## **Ironmark, Annapolis Junction, MD**
 
-**Software Developer (full time)           February 2026 – Present**
+**Software Engineer (full time)           February 2026 – Present**
 
 * Building and maintaining the AMMS platform - a high-throughput, multi-tenant PHP 8.4 / OpenSwoole marketing automation system with queue-driven async workflows, multi-client isolation, and integrations with popular third-party business development APIs.
 * Supporting and enhancing Deliver Media's .NET application suite, including a core back-office production system, REST API layer, client-facing analytics dashboard (.NET 10 / ASP.NET Core), and campaign management tools across .NET Framework 4.8 and modern .NET.

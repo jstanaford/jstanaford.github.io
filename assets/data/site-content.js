@@ -44,8 +44,8 @@ const siteContent = {
     ironmark: {
       company: "Ironmark",
       period: "February 2026 – Present",
-      role: "Software Developer",
-      description: "Full-stack developer supporting two acquired companies - American Marketing and Deliver Media - across PHP and .NET environments. Primary focus on building and maintaining PHP marketing automation platforms, with secondary responsibility for .NET enterprise applications.",
+      role: "Software Engineer",
+      description: "Full-stack engineer supporting two acquired companies - American Marketing and Deliver Media - across PHP and .NET environments. Primary focus on building and maintaining PHP marketing automation platforms, with secondary responsibility for .NET enterprise applications.",
       contributions: {
         title: "Key Contributions:",
         items: [
@@ -173,7 +173,7 @@ const siteContent = {
     title: "ABOUT ME",
     paragraphs: [
       "With over six years of dedicated education and hands-on experience, I am a passionate software developer who thrives on building and maintaining impactful enterprise systems. My journey has taken me from earning a Bachelor's in Music Education to completing an intensive software development bootcamp, and now pursuing a Master's in Computer Science at Stevens Institute of Technology.",
-      "I currently work as a Software Developer at Ironmark, where I build and maintain marketing automation platforms and enterprise back-office applications across PHP and .NET environments. My professional experience spans modern PHP development (Laravel, OpenSwoole async systems), C#/.NET enterprise applications, RESTful API design, and relational database work across MySQL, PostgreSQL, and SQL Server.",
+      "I currently work as a Software Engineer at Ironmark, where I build and maintain marketing automation platforms and enterprise back-office applications across PHP and .NET environments. My professional experience spans modern PHP development (Laravel, OpenSwoole async systems), C#/.NET enterprise applications, RESTful API design, and relational database work across MySQL, PostgreSQL, and SQL Server.",
       "I am committed to continuous learning and delivering high-quality software. Whether modernizing legacy systems, designing async microservice architectures, or collaborating across technology stacks, I bring technical depth, adaptability, and a drive to solve real business problems."
     ],
     resumeText: "View My Resume",
