@@ -2,7 +2,7 @@
 
 # **Jacob  Stanaford**
 
-Full-Stack  Software  Developer 
+Software Engineer | Cloud Platform & DevOps
 
 	Camp  Hill, PA 17011  | jacobstanafordprofessional@gmail.com  |  (978) 799 \- 8192 
 
@@ -12,7 +12,7 @@ Full-Stack  Software  Developer
 
 **Summary:**
 
-Full-stack software engineer with 6+ years of professional experience building and maintaining enterprise web applications. Currently a Software Engineer at Ironmark, supporting multi-channel PHP marketing automation platforms and .NET enterprise systems across two acquired companies. Experienced in modern PHP (OOP, Laravel, OpenSwoole), C#/.NET (Framework 4.8, .NET 10, ASP.NET MVC/Core), relational databases (MySQL, PostgreSQL, SQL Server), and RESTful API design. Pursuing a Master's in Computer Science at Stevens Institute of Technology (4.0 GPA) with a focus on software architecture, AI/ML, and enterprise systems.
+Full-stack software engineer with 6+ years of professional experience building, maintaining, and modernizing enterprise systems. Currently a Software Engineer at Ironmark, where I architect a cloud platform migration to AWS, own DevOps and CI/CD, and lead production incident response for a marketing automation stack while also supporting PHP and .NET applications across multiple sub companies. Experienced across AWS (ECS Fargate, Aurora, Lambda, IaC), modern PHP (Laravel, OpenSwoole), C#/.NET (Framework 4.8, .NET 10, ASP.NET MVC/Core), relational databases (MySQL, PostgreSQL, SQL Server), and RESTful API design. Pursuing a Master's in Computer Science at Stevens Institute of Technology (4.0 GPA) with a focus on software architecture.
 
    
 
@@ -20,11 +20,11 @@ Full-stack software engineer with 6+ years of professional experience building a
 
 **Programming  Languages:** PHP, Bash,  JavaScript,  SQL  (MySQL, MariaDB, MSSQL), Liquid, C\#,  HTML,  CSS, Python, TypeScript, Lua, VB, and Powershell
 
-**Frameworks & Technologies:** WordPress, Laravel, Shopify, Drupal, Magento, Joomla\!,   Django, .NET, Google Cloud Platform, Express.js, Angular, Jenkins, Ansible, Docker, AWS, Zend Framework, React, CI/CD, Tailwind, Meilisearch, Filament, Livewire, Scrapy, FastAPI, Playwright, Node.js
+**Frameworks & Technologies:** AWS (ECS Fargate, Aurora, Lambda, ALB/WAF, IAM, Secrets Manager, CloudWatch), Terraform, GitHub Actions, Docker, Jenkins, Ansible, CI/CD, Laravel, .NET, Django, Node.js, Express.js, React, Angular, Google Cloud Platform, WordPress, Shopify, Drupal, Magento, Joomla, Zend Framework, Tailwind, Meilisearch, Filament, Livewire, Scrapy, FastAPI, Playwright
 
 **IDE Experience:** PHPStorm, Visual Studio, Sublime, Visual Studio Code,  PyCharm, Cursor, & Rider
 
-**AI Model Experience:** Cursor, Claude, Gemini, Github Copilot, Llama, DeepSeek
+**AI Model Experience:** Claude Code (including MCP), Cursor, Claude, GitHub Copilot, Gemini, Llama, DeepSeek
 
 **Version  Control:** Git, GitHub,  BitBucket, Beanstalk
 
@@ -32,20 +32,23 @@ Full-stack software engineer with 6+ years of professional experience building a
 
 **Work  Experience:**
 
-## **Ironmark, Annapolis Junction, MD**
+## **Ironmark, Annapolis Junction, MD (Remote)**
 
 **Software Engineer (full time)           February 2026 – Present**
 
-* Building and maintaining the AMMS platform - a high-throughput, multi-tenant PHP 8.4 / OpenSwoole marketing automation system with queue-driven async workflows, multi-client isolation, and integrations with popular third-party business development APIs.
-* Supporting and enhancing Deliver Media's .NET application suite, including a core back-office production system, REST API layer, client-facing analytics dashboard (.NET 10 / ASP.NET Core), and campaign management tools across .NET Framework 4.8 and modern .NET.
-* Designing and maintaining RESTful APIs and system integrations across PHP and .NET ecosystems, including multi-tenant database routing and business intelligence reporting.
-* Collaborating across a dual-stack environment (PHP/MySQL/PostgreSQL and C#/SQL Server) to deliver features, fix production issues, and improve system stability.
+* Architecting a cloud platform migration for a sub-company at Ironmark, spanning networking, compute, database, and CI/CD. Sole or primary author of the modernization strategy and its foundational infrastructure-as-code, currently running in production.
+* Authored the team's authoritative AWS infrastructure reference covering networking, compute, database, load balancing, identity, and secrets. Used as the canonical architecture document for the platform.
+* Built the team's CI/CD and observability foundation. Authored the GitHub Actions workflows, verified deployment methodology, multi-server parity governance, and production monitoring detectors covering distinct pipeline failure modes.
+* Led a multi-week rescue of a degraded production data pipeline, restoring sync to operational baseline, standing up telemetry to catch failures early, and preventing customer-facing regressions.
+* Build and maintain a high-throughput, multi-tenant marketing automation platform (PHP 8.4 / OpenSwoole) with queue-driven async workflows, multi-client isolation, and third-party API integrations.
+* Support and enhance a sister sub-company's .NET application suite (Framework 4.8 + .NET 10 / ASP.NET Core), including a back-office production system, RESTful API layer, client-facing analytics dashboard, and campaign management tools.
+* Coach team members on AWS work and proper dev workflow for in-house server changes, and help modernize the team's use of AI tooling in engineering work.
 
 ## **The YGS Group, York, PA**
 
 **Senior Software Engineer | Full Stack (full time)           June 2025 – February 2026**
 
-* Led development teams on enterprise e-commerce platforms, automation systems, and API services across a diverse technology stack spanning Laravel/PHP, .NET/[ASP.NET](http://ASP.NET) with Angular frontend, Node.js/TypeScript, and Python applications.  
+* Led development teams on enterprise e-commerce platforms, automation systems, and API services across a diverse technology stack spanning Laravel/PHP, .NET/ASP.NET with Angular frontend, Node.js/TypeScript, and Python applications.  
 * Built and maintained multiple Laravel/Lunar PHP e-commerce storefronts with payment processing ([Authorize.net](http://Authorize.net), Braintree, etc…), shipping integrations (eg Fedex & USPS), and custom template design \+ systems for clients.  
 * Developed and maintained a comprehensive order processing automation platform with SFTP file transfers, Pace API integration, queue-based job processing via Laravel Horizon, and PDF/Excel file processing capabilities.  
 * Created TypeScript/Express.js microservices including FedEx shipping API wrapper with semantic versioning and Cloudflare bot verification service implementing RFC 9421 HTTP Message Signatures.  
@@ -90,7 +93,7 @@ Full-stack software engineer with 6+ years of professional experience building a
 
 * Classes designed to develop skills as software development leaders and high-quality programmers.
 
-* Specific focus & extra curricular courses geared towards machine learning, linear algebra, algorithms and software server architecture 
+* Specific focus and extra-curricular courses geared toward software architecture.
 
 * Current GPA 4.0 
 

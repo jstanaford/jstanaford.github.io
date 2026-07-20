@@ -45,25 +45,33 @@ const siteContent = {
       company: "Ironmark",
       period: "February 2026 – Present",
       role: "Software Engineer",
-      description: "Full-stack engineer supporting two acquired companies - American Marketing and Deliver Media - across PHP and .NET environments. Primary focus on building and maintaining PHP marketing automation platforms, with secondary responsibility for .NET enterprise applications.",
+      description: "Full-stack engineer architecting the cloud platform, DevOps practices, and incident response for the marketing automation stack at Ironmark, additive to PHP and .NET support for multiple sub companies. Authoring the cloud modernization strategy and the deployment, observability, and reliability practices the team relies on.",
       contributions: {
         title: "Key Contributions:",
         items: [
           {
+            title: "Cloud Platform Architecture:",
+            text: "Architecting a new cloud platform migration for an Ironmark sub-company across networking, compute, database, and CI/CD, including the event-driven pipeline rewrite, the database migration strategy, the API gateway modernization, and the foundational infrastructure-as-code currently running in production"
+          },
+          {
+            title: "DevOps & Site Reliability Engineering:",
+            text: "Built the team's CI/CD and observability foundation. Authored the GitHub Actions workflows, verified deployment methodology, multi-server parity governance, and production monitoring detectors covering distinct pipeline failure modes"
+          },
+          {
+            title: "AWS Infrastructure Reference:",
+            text: "Authored the team's authoritative AWS infrastructure reference covering networking, compute, database, load balancing, identity, and secrets. Used as the canonical architecture document for the platform"
+          },
+          {
             title: "PHP Marketing Automation:",
-            text: "Building and maintaining the AMMS platform - a high-throughput, multi-tenant marketing automation system on PHP 8.4 and OpenSwoole async coroutines, with queue-driven workflows, multi-client isolation, and integrations with popular third-party business development APIs"
+            text: "Build and maintain a high-throughput, multi-tenant marketing automation platform with queue-driven async workflows, multi-client isolation, and third-party API integrations"
           },
           {
             title: ".NET Enterprise Systems:",
-            text: "Supporting and enhancing Deliver Media's .NET application suite including a core back-office production system, RESTful API layer, client-facing analytics dashboard (.NET 10), and campaign management tools across .NET Framework 4.8 and modern .NET"
-          },
-          {
-            title: "API & Integration Development:",
-            text: "Designing and maintaining RESTful APIs and integrations across both ecosystems, including async task servers, multi-tenant database routing, and reporting and business intelligence tooling"
+            text: "Support and enhance a sister sub-company's .NET application suite, including a back-office production system, RESTful API layer, client-facing analytics dashboard, and campaign management tools"
           }
         ]
       },
-      technologies: "Technologies: PHP 8.4, OpenSwoole, MySQL, PostgreSQL, C#, .NET Framework 4.8, .NET 10, ASP.NET MVC/Core, SQL Server, Entity Framework, REST APIs, AWS"
+      technologies: "Technologies: AWS (ECS Fargate, Aurora Serverless v2, Lambda, ALB/WAF, IAM, Secrets Manager, CloudWatch), Terraform, GitHub Actions, PHP 8.4, OpenSwoole, MySQL, PostgreSQL, C#, .NET Framework 4.8, .NET 10, ASP.NET MVC/Core, SQL Server, Entity Framework, REST APIs"
     },
     ygsGroup: {
       company: "YGS Group",
@@ -173,7 +181,7 @@ const siteContent = {
     title: "ABOUT ME",
     paragraphs: [
       "With over six years of dedicated education and hands-on experience, I am a passionate software developer who thrives on building and maintaining impactful enterprise systems. My journey has taken me from earning a Bachelor's in Music Education to completing an intensive software development bootcamp, and now pursuing a Master's in Computer Science at Stevens Institute of Technology.",
-      "I currently work as a Software Engineer at Ironmark, where I build and maintain marketing automation platforms and enterprise back-office applications across PHP and .NET environments. My professional experience spans modern PHP development (Laravel, OpenSwoole async systems), C#/.NET enterprise applications, RESTful API design, and relational database work across MySQL, PostgreSQL, and SQL Server.",
+      "I currently work as a Software Engineer at Ironmark, where I architect a cloud platform migration to AWS, own DevOps and CI/CD practices, and lead production incident response for our marketing automation stack, while also supporting PHP and .NET applications across multiple sub companies. My professional experience spans AWS (ECS Fargate, Aurora, Lambda, infrastructure-as-code), modern PHP development (Laravel, OpenSwoole async systems), C#/.NET enterprise applications, RESTful API design, and relational database work across MySQL, PostgreSQL, and SQL Server.",
       "I am committed to continuous learning and delivering high-quality software. Whether modernizing legacy systems, designing async microservice architectures, or collaborating across technology stacks, I bring technical depth, adaptability, and a drive to solve real business problems."
     ],
     resumeText: "View My Resume",

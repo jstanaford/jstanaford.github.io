@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jacob Stanaford Resume</title>
+<style>
+  :root {
+    --text: #1a1a1a;
+    --rule: #333;
+    --link: #1a5cba;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: var(--text);
+    font-family: 'Times New Roman', Georgia, serif;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  .page {
+    max-width: 7.5in;
+    margin: 0.5in auto;
+    padding: 0 0.4in;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 0.35in;
+  }
+
+  header h1 {
+    font-size: 24pt;
+    font-weight: bold;
+    margin: 0 0 0.05in 0;
+    letter-spacing: 0.5px;
+  }
+
+  header .title {
+    font-size: 14pt;
+    font-weight: normal;
+    margin: 0 0 0.1in 0;
+  }
+
+  header .contact,
+  header .links {
+    font-size: 11pt;
+    margin: 0.05in 0;
+  }
+
+  header .links a {
+    color: var(--link);
+    text-decoration: underline;
+  }
+
+  section.section {
+    margin-top: 0.15in;
+  }
+
+  section.section h2 {
+    font-size: 13pt;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin: 0.15in 0 0.05in 0;
+    padding-bottom: 0.02in;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section.section p,
+  section.section li {
+    margin: 0.05in 0;
+    text-align: left;
+  }
+
+  .skills p {
+    margin: 0.04in 0;
+    line-height: 1.5;
+  }
+
+  .job {
+    margin-top: 0.12in;
+  }
+
+  .job .company {
+    font-weight: bold;
+    font-size: 12pt;
+    margin: 0;
+  }
+
+  .job .role-line {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin: 0.02in 0 0.05in 0;
+  }
+
+  .job .role-line .role {
+    font-weight: bold;
+  }
+
+  .job .role-line .dates {
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .job ul {
+    margin: 0.05in 0 0.05in 0.25in;
+    padding-left: 0.15in;
+  }
+
+  .job ul li {
+    margin: 0.04in 0;
+    line-height: 1.4;
+  }
+
+  .edu {
+    margin-top: 0.12in;
+  }
+
+  .edu .school-line {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 12pt;
+    margin: 0.02in 0 0.05in 0;
+  }
+
+  .edu ul {
+    margin: 0.05in 0 0.05in 0.25in;
+    padding-left: 0.15in;
+  }
+
+  .edu ul li {
+    margin: 0.03in 0;
+  }
+
+  a { color: var(--link); }
+
+  /* Print rules: make it fit a clean single letter page */
+  @media print {
+    .page {
+      margin: 0.4in auto;
+      padding: 0 0.3in;
+    }
+    a { color: var(--link); text-decoration: underline; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>Jacob Stanaford</h1>
+  <div class="title">Software Engineer | Cloud Platform &amp; DevOps</div>
+  <div class="contact">Camp Hill, PA 17011 | jacobstanafordprofessional@gmail.com | (978) 799-8192</div>
+  <div class="links">
+    <a href="https://www.linkedin.com/in/jacobstanaford/">LinkedIn</a> |
+    <a href="https://jstanaford.github.io/">Portfolio</a> |
+    <a href="https://github.com/jstanaford">GitHub</a>
+  </div>
+</header>
+
+<section class="section">
+  <h2>Summary:</h2>
+  <p>Full-stack software engineer with 6+ years of professional experience building, maintaining, and modernizing enterprise systems. Currently a Software Engineer at Ironmark, where I architect a cloud platform migration to AWS, own DevOps and CI/CD, and lead production incident response for a marketing automation stack while also supporting PHP and .NET applications across multiple sub companies. Experienced across AWS (ECS Fargate, Aurora, Lambda, IaC), modern PHP (Laravel, OpenSwoole), C#/.NET (Framework 4.8, .NET 10, ASP.NET MVC/Core), relational databases (MySQL, PostgreSQL, SQL Server), and RESTful API design. Pursuing a Master's in Computer Science at Stevens Institute of Technology (4.0 GPA) with a focus on software architecture.</p>
+</section>
+
+<section class="section skills">
+  <h2>Skills:</h2>
+  <p><strong>Programming Languages:</strong> PHP, Bash, JavaScript, SQL (MySQL, MariaDB, MSSQL), Liquid, C#, HTML, CSS, Python, TypeScript, Lua, VB, and PowerShell</p>
+  <p><strong>Frameworks &amp; Technologies:</strong> AWS (ECS Fargate, Aurora, Lambda, ALB/WAF, IAM, Secrets Manager, CloudWatch), Terraform, GitHub Actions, Docker, Jenkins, Ansible, CI/CD, Laravel, .NET, Django, Node.js, Express.js, React, Angular, Google Cloud Platform, WordPress, Shopify, Drupal, Magento, Joomla, Zend Framework, Tailwind, Meilisearch, Filament, Livewire, Scrapy, FastAPI, Playwright</p>
+  <p><strong>IDE Experience:</strong> PHPStorm, Visual Studio, Sublime, Visual Studio Code, PyCharm, Cursor, &amp; Rider</p>
+  <p><strong>AI Model Experience:</strong> Claude Code (including MCP), Cursor, Claude, GitHub Copilot, Gemini, Llama, DeepSeek</p>
+  <p><strong>Version Control:</strong> Git, GitHub, BitBucket, Beanstalk</p>
+</section>
+
+<section class="section">
+  <h2>Work Experience:</h2>
+
+  <div class="job">
+    <div class="company">Ironmark, Annapolis Junction, MD (Remote)</div>
+    <div class="role-line">
+      <span class="role">Software Engineer (full time)</span>
+      <span class="dates">February 2026 – Present</span>
+    </div>
+    <ul>
+      <li>Architecting a cloud platform migration for a sub-company at Ironmark, spanning networking, compute, database, and CI/CD. Sole or primary author of the modernization strategy and its foundational infrastructure-as-code, currently running in production.</li>
+      <li>Authored the team's authoritative AWS infrastructure reference covering networking, compute, database, load balancing, identity, and secrets. Used as the canonical architecture document for the platform.</li>
+      <li>Built the team's CI/CD and observability foundation. Authored the GitHub Actions workflows, verified deployment methodology, multi-server parity governance, and production monitoring detectors covering distinct pipeline failure modes.</li>
+      <li>Led a multi-week rescue of a degraded production data pipeline, restoring sync to operational baseline, standing up telemetry to catch failures early, and preventing customer-facing regressions.</li>
+      <li>Build and maintain a high-throughput, multi-tenant marketing automation platform (PHP 8.4 / OpenSwoole) with queue-driven async workflows, multi-client isolation, and third-party API integrations.</li>
+      <li>Support and enhance a sister sub-company's .NET application suite (Framework 4.8 + .NET 10 / ASP.NET Core), including a back-office production system, RESTful API layer, client-facing analytics dashboard, and campaign management tools.</li>
+      <li>Coach team members on AWS work and proper dev workflow for in-house server changes, and help modernize the team's use of AI tooling in engineering work.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="company">The YGS Group, York, PA</div>
+    <div class="role-line">
+      <span class="role">Senior Software Engineer | Full Stack (full time)</span>
+      <span class="dates">June 2025 – February 2026</span>
+    </div>
+    <ul>
+      <li>Led development teams on enterprise e-commerce platforms, automation systems, and API services across a diverse technology stack spanning Laravel/PHP, .NET/ASP.NET with Angular frontend, Node.js/TypeScript, and Python applications.</li>
+      <li>Built and maintained multiple Laravel/Lunar PHP e-commerce storefronts with payment processing (Authorize.net, Braintree), shipping integrations (FedEx, USPS), and custom template design and systems for clients.</li>
+      <li>Developed and maintained a comprehensive order processing automation platform with SFTP file transfers, Pace API integration, queue-based job processing via Laravel Horizon, and PDF/Excel file processing capabilities.</li>
+      <li>Created TypeScript/Express.js microservices including a FedEx shipping API wrapper with semantic versioning and a Cloudflare bot verification service implementing RFC 9421 HTTP Message Signatures.</li>
+      <li>Built and maintained advanced Python/Scrapy web scraping platforms with machine learning capabilities, JavaScript rendering via Playwright, and REST API endpoints using Flask and FastAPI.</li>
+      <li>Implemented CI/CD workflows with GitHub Actions, Docker containerization, and automated deployment systems for multi-environment support (staging, production, development).</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="company">WebFX, Harrisburg, PA</div>
+    <div class="role-line">
+      <span class="role">Senior Developer | Full Stack Development (full time)</span>
+      <span class="dates">March 2020 – May 2025</span>
+    </div>
+    <ul>
+      <li>Developed, implemented, tested, and supported a wide variety of web-based projects primarily built on LAMP stack technologies.</li>
+      <li>Creative lead to introduce AI development tools and AI security to the design, front-end development, interactive development, and project management departments.</li>
+      <li>Pioneered DevOps workflows to primary client-facing teams to improve local development via Docker and deployments across a variety of LAMP stack servers for client and internal websites.</li>
+      <li>Identified and resolved issues on various open-source platforms through debugging and problem-solving techniques.</li>
+      <li>Provided consultation to both clients and team members to ensure that enterprise business applications use efficient, profitable technologies.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="company">Prosper IT Consulting, Portland, OR</div>
+    <div class="role-line">
+      <span class="role">Software Developer Intern (Full-Time)</span>
+      <span class="dates">Aug – Dec 2019</span>
+    </div>
+    <ul>
+      <li>Worked within the Agile Methodology (such as Scrum) on a 2-week sprint project.</li>
+      <li>Collaborated with teams of developers using Git and Azure DevOps version control systems.</li>
+      <li>Fully developed front-end and back-end aspects of an assigned application on the collection of items utilizing Python, Django frameworks, JavaScript, Git, Beautiful Soup, JSON, and Azure DevOps.</li>
+      <li>Learned how to use the Django frameworks and Python to reference an API service and render a page of data-scraped articles relevant to a topic.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="company">Keystone Human Services, Cumberland County, PA</div>
+    <div class="role-line">
+      <span class="role">Community Support Professional</span>
+      <span class="dates">August 2019 – March 2020</span>
+    </div>
+    <ul>
+      <li>Clinically oriented support work for adults living with autism.</li>
+      <li>Assistance in skill development.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Education:</h2>
+
+  <div class="edu">
+    <div class="school-line">
+      <span>Stevens Institute of Technology, Computer Science</span>
+      <span>Fall 2023 – Present</span>
+    </div>
+    <ul>
+      <li>Computer Science MSCS.</li>
+      <li>Classes designed to develop skills as software development leaders and high-quality programmers.</li>
+      <li>Specific focus and extra-curricular courses geared toward software architecture.</li>
+      <li>Current GPA 4.0.</li>
+    </ul>
+  </div>
+
+  <div class="edu">
+    <div class="school-line">
+      <span>The Tech Academy, Computer Science</span>
+      <span>Sept. 2019 – Dec. 2019</span>
+    </div>
+    <ul>
+      <li>15-week intensive software development bootcamp with courses in HTML, CSS, JavaScript, SQL, and a primary focus in Python and the Django framework.</li>
+      <li>Covered front-end and back-end web and software development.</li>
+    </ul>
+  </div>
+
+  <div class="edu">
+    <div class="school-line">
+      <span>Messiah College, PA</span>
+      <span>Aug. 2015 – May 2019</span>
+    </div>
+    <ul>
+      <li>Music Education K-12, Bachelor of Science.</li>
+      <li>Concentration in vocal and piano studies.</li>
+      <li>3.55 GPA (cum laude).</li>
+    </ul>
+  </div>
+</section>
+
+</div>
+</body>
+</html>
