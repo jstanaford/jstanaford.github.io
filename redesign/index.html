@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jacob Stanaford — Software Engineer, Cloud Platform & DevOps</title>
+<title>Jacob Stanaford Portfolio | Software Engineer, Cloud Platform & DevOps</title>
 <style>/* Nocturne — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
 /* cyrillic-ext */
 @font-face {
@@ -579,11 +579,18 @@ html{background:#0e0f18}
 @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
 .t{display:inline-block;width:max-content;max-width:100%;overflow:hidden;white-space:nowrap;vertical-align:bottom;animation:type .5s steps(34,end) both}
 .caret{display:inline-block;width:7px;height:14px;background:#9184d9;vertical-align:-2px;margin-left:2px;animation:blink 1.1s step-end infinite}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.pre{opacity:0;color:#9184d9;animation:fadein .12s linear both}
+.term-body::-webkit-scrollbar{width:10px}
+.term-body::-webkit-scrollbar-track{background:rgba(145,132,217,.06);border-radius:8px}
+.term-body::-webkit-scrollbar-thumb{background:rgba(145,132,217,.45);border-radius:8px;border:2px solid rgba(22,24,38,.6)}
+.term-body::-webkit-scrollbar-thumb:hover{background:rgba(145,132,217,.7)}
+.term-body{scrollbar-color:rgba(145,132,217,.55) rgba(145,132,217,.08);scrollbar-width:thin}
 </style>
 </head>
 <body style="background:var(--color-bg);color:var(--color-text)">
 
-<div style="max-width:1160px;margin:0 auto;background:#161826;box-shadow:0 0 0 1px rgba(233,233,237,.06)">
+<div style="max-width:1360px;margin:0 auto;background:#161826;box-shadow:0 0 0 1px rgba(233,233,237,.06)">
 
   <!-- ═════════════════ TOP NAV ═════════════════ -->
   <div style="position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:58px;background:rgba(22,24,38,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(233,233,237,.1)">
@@ -665,19 +672,88 @@ html{background:#0e0f18}
             <span style="width:9px;height:9px;border-radius:50%;background:#9184d9;display:block"></span>
             <span class="mono" style="font-size:10.5px;color:rgba(233,233,237,.4);margin-left:6px">~/portfolio</span>
           </div>
-          <div class="mono" style="font-size:12.5px;line-height:1.95;padding:16px 18px;color:rgba(233,233,237,.8)">
-            <div><span style="color:#9184d9">$</span> <span class="t" style="animation-delay:.2s">whoami</span></div>
-            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:.8s">jacob · software engineer, cloud platform &amp; devops</span></div>
-            <div style="margin-top:9px"><span style="color:#9184d9">$</span> <span class="t" style="animation-delay:1.5s">stack --all</span></div>
-            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:2.1s">aws · terraform · github actions · docker · linux · bash</span></div>
-            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:2.5s">php · laravel · openswoole · python · node.js · typescript</span></div>
-            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:2.9s">c# · .net · mysql · postgresql · sql server</span></div>
-            <div style="color:#b5abfc"><span class="t" style="animation-delay:3.3s">claude code · mcp · modern ai-assisted engineering</span></div>
-            <div style="margin-top:9px"><span style="color:#9184d9">$</span> <span class="t" style="animation-delay:3.9s">now</span></div>
-            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:4.4s">software engineer @ ironmark</span></div>
-            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:4.8s">m.s. computer science @ stevens institute of technology</span></div>
-            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:5.2s">open to part-time contract engagements</span><span class="caret"></span></div>
+          <div id="term-body" class="mono term-body" style="font-size:12.5px;line-height:1.95;padding:16px 18px;color:rgba(233,233,237,.8);max-height:460px;overflow-y:auto">
+            <div><span class="pre" style="animation-delay:.05s">$</span> <span class="t" style="animation:type .42s steps(6,end) both;animation-delay:.4s">whoami</span></div>
+            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:1.4s">jacob · software engineer, cloud platform &amp; devops</span></div>
+
+            <div style="margin-top:9px"><span class="pre" style="animation-delay:2.45s">$</span> <span class="t" style="animation:type .21s steps(3,end) both;animation-delay:2.8s">now</span></div>
+            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:3.8s">software engineer @ ironmark</span></div>
+            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:4.6s">m.s. computer science @ stevens institute of technology</span></div>
+            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:5.4s">open to part-time contract engagements</span></div>
+
+            <div style="margin-top:9px"><span class="pre" style="animation-delay:6.45s">$</span> <span class="t" style="animation:type .77s steps(11,end) both;animation-delay:6.8s">stack --all</span></div>
+            <div style="color:rgba(233,233,237,.45)"><span class="t" style="animation-delay:7.8s">// fetching full stack...</span></div>
+
+            <div style="margin-top:6px;color:#9184d9"><span class="t" style="animation-delay:9s">[cloud &amp; devops]</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:9.8s">aws · gcp · azure · terraform · github actions · docker · docker compose · jenkins · ansible</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:10.6s">serverless functions (lambda) · ecs · api gateway · load balancing · nginx · cloudflare</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:11.4s">iam / identity &amp; access · secrets management · monitoring &amp; observability · ci/cd · infrastructure as code</span></div>
+
+            <div style="margin-top:6px;color:#9184d9"><span class="t" style="animation-delay:12.6s">[languages]</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:13.4s">php · javascript · typescript · python · c# · c · c++ · go</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:14.2s">bash · powershell · sql · yaml · html · css · lua · vb.net · liquid</span></div>
+
+            <div style="margin-top:6px;color:#9184d9"><span class="t" style="animation-delay:15.4s">[frameworks &amp; runtimes]</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:16.2s">laravel · laravel horizon · openswoole · .net (framework 4.8, .net 10) · asp.net mvc/core · entity framework</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:17s">django · fastapi · flask · node.js · express.js</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:17.8s">scrapy · playwright · beautiful soup</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:18.6s">react · angular · vue.js · electron.js · tkinter</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:19.4s">filament · livewire · tailwind · bootstrap · zend · lunar · vite</span></div>
+
+            <div style="margin-top:6px;color:#9184d9"><span class="t" style="animation-delay:20.6s">[cms &amp; commerce]</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:21.4s">wordpress · woocommerce · shopify · drupal · magento · joomla · custom post types · custom taxonomies</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:22.2s">payment: authorize.net · braintree  ·  shipping: fedex api · usps  ·  order ops: pace api  ·  tax: complyt</span></div>
+
+            <div style="margin-top:6px;color:#9184d9"><span class="t" style="animation-delay:23.4s">[data &amp; apis]</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:24.2s">mysql · mariadb · postgresql · aurora serverless v2 · sql server · sqlite · meilisearch</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:25s">rest apis · swagger/openapi · third-party integrations · web scraping</span></div>
+
+            <div style="margin-top:6px;color:#9184d9"><span class="t" style="animation-delay:26.2s">[ai &amp; ml]</span></div>
+            <div style="color:#b5abfc"><span class="t" style="animation-delay:27s">claude code (incl. mcp) · cursor · claude · github copilot · gemini · llama · deepseek</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:27.8s">tensorflow · keras · nlp · deep learning · machine learning fundamentals</span></div>
+
+            <div style="margin-top:6px;color:#9184d9"><span class="t" style="animation-delay:29s">[editors &amp; version control]</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:29.8s">vs code · phpstorm · cursor · rider · pycharm · visual studio · sublime</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:30.6s">git · github · bitbucket · beanstalk</span></div>
+
+            <div style="margin-top:6px;color:#9184d9"><span class="t" style="animation-delay:31.8s">[practices]</span></div>
+            <div style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:32.6s">agile · scrum · devops · site reliability · observability · incident response · code review</span></div>
+
+            <div style="margin-top:9px"><span class="pre" style="animation-delay:33.6s">$</span><span class="caret"></span></div>
           </div>
+          <script>
+          (function(){
+            var term = document.getElementById('term-body');
+            if (!term) return;
+            // Start with the terminal scrolled to the top so the reveal begins at $ whoami.
+            term.scrollTop = 0;
+            var userScrolled = false;
+            term.addEventListener('wheel', function(){ userScrolled = true; }, {passive:true});
+            term.addEventListener('touchstart', function(){ userScrolled = true; }, {passive:true});
+
+            // For each typed span, schedule a scroll-into-view when its typing animation starts.
+            var spans = term.querySelectorAll('.t');
+            spans.forEach(function(sp){
+              var delayStr = sp.style.animationDelay || '0s';
+              var ms = parseFloat(delayStr) * 1000;
+              setTimeout(function(){
+                if (userScrolled) return;
+                var row = sp.closest('div');
+                if (!row) return;
+                var rowBottom = row.offsetTop + row.offsetHeight;
+                // Only scroll when the new row would fall below the visible area,
+                // and leave ~35% of the terminal height as a tail so prior lines stay readable.
+                var visibleBottom = term.scrollTop + term.clientHeight;
+                if (rowBottom > visibleBottom - 8) {
+                  var target = Math.max(0, rowBottom - Math.round(term.clientHeight * 0.65));
+                  if (target > term.scrollTop) {
+                    term.scrollTo({top: target, behavior: 'smooth'});
+                  }
+                }
+              }, ms);
+            });
+          })();
+          </script>
         </div>
       </section>
 
