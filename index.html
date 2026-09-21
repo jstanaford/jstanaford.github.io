@@ -1,660 +1,990 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jacob Stanaford | Software Developer Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1a1a1a',
-                        secondary: '#2d2d2d',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="assets/css/app.css?v=1.1.1">
-    <!-- Vue.js 3 (Production Build) -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-    <!-- Three.js (ES Modules for modern browsers) -->
-    <script type="module">
-      import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
-      window.THREE = THREE;
-    </script>
-    <!-- Site content data (all text content) -->
-    <script src="assets/data/site-content.js?v=1.0.1"></script>
-    <!-- Portfolio data (included directly, no fetch needed) -->
-    <script src="assets/data/portfolio-data.js"></script>
-    <!-- Portfolio utilities -->
-    <script src="assets/js/portfolio-utils.js"></script>
-    <!-- Three.js visualization -->
-    <script src="assets/js/three-viz.js?v=1.0.1"></script>
-    <!-- Three.js hero orbits -->
-    <script src="assets/js/hero-orbits.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jacob Stanaford Portfolio | Software Engineer, Cloud Platform & DevOps</title>
+<style>/* Nocturne — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/e448b426-da30-4cca-98b8-e3b02acdb00e.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/f47bdb8e-4d1e-4880-98b2-61ec3b3f5b4e.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/65dbf467-a188-4898-a3f2-194eca84f91b.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/1e72e751-fc00-493d-9ffb-1dca9f66a123.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/7c887afc-5d10-48a5-83d8-a8b218cb002e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/c6983fc7-9854-4e55-b79d-0b1c1384f099.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/23ee8424-22c7-4cfa-b0a1-add9e2dee1e7.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/e448b426-da30-4cca-98b8-e3b02acdb00e.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/f47bdb8e-4d1e-4880-98b2-61ec3b3f5b4e.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/65dbf467-a188-4898-a3f2-194eca84f91b.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/1e72e751-fc00-493d-9ffb-1dca9f66a123.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/7c887afc-5d10-48a5-83d8-a8b218cb002e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/c6983fc7-9854-4e55-b79d-0b1c1384f099.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/23ee8424-22c7-4cfa-b0a1-add9e2dee1e7.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/e448b426-da30-4cca-98b8-e3b02acdb00e.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/f47bdb8e-4d1e-4880-98b2-61ec3b3f5b4e.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/65dbf467-a188-4898-a3f2-194eca84f91b.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/1e72e751-fc00-493d-9ffb-1dca9f66a123.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/7c887afc-5d10-48a5-83d8-a8b218cb002e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/c6983fc7-9854-4e55-b79d-0b1c1384f099.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/23ee8424-22c7-4cfa-b0a1-add9e2dee1e7.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/e448b426-da30-4cca-98b8-e3b02acdb00e.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/f47bdb8e-4d1e-4880-98b2-61ec3b3f5b4e.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/65dbf467-a188-4898-a3f2-194eca84f91b.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/1e72e751-fc00-493d-9ffb-1dca9f66a123.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/7c887afc-5d10-48a5-83d8-a8b218cb002e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/c6983fc7-9854-4e55-b79d-0b1c1384f099.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/23ee8424-22c7-4cfa-b0a1-add9e2dee1e7.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+:root {
+  --color-bg: #161826;
+  --color-surface: #232532;
+  --color-text: #e9e9ed;
+  --color-accent: #9184d9; /* review round 7 (Barron): the accent moves to
+     the product's blurple — OKLCH hue 289.2, the hue of the app's own Pro
+     accent (#9a8fe0, --om-accent-pro) — at the same lightness the steel
+     accent held (L 0.660, so the documented ratios survive) and chroma
+     in the product blurple's own range (its token sits at C 0.118; the
+     accent takes 0.125, from the old steel's 0.030):
+     the accent now reads as an accent rather than another neutral. */
+  --color-accent-2: #a7a1db; /* the machine-derived stand-in follows: same
+     hue, same L 0.734, chroma at the same 2:3 proportion it held */
+  --color-divider: color-mix(in srgb, #e9e9ed 16%, transparent);
+
+  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
+     same step of any role matches the others in visual value. */
+  --color-neutral-100: #f3f5fe;
+  --color-neutral-200: #e4e7f5;
+  --color-neutral-300: #cfd3e5;
+  --color-neutral-400: #b2b6ca;
+  --color-neutral-500: #9397ab;
+  --color-neutral-600: #75798c;
+  --color-neutral-700: #595d6c;
+  --color-neutral-800: #3f424d;
+  --color-neutral-900: #292b31;
+
+  --color-accent-100: #f5f4ff;
+  --color-accent-200: #e7e5fe;
+  --color-accent-300: #d2cefd;
+  --color-accent-400: #b5abfc;
+  --color-accent-500: #968ae0;
+  --color-accent-600: #796cbf;
+  --color-accent-700: #5d5294;
+  --color-accent-800: #423a6a;
+  --color-accent-900: #2b2741;
+
+  --color-accent-2-100: #f5f4ff;
+  --color-accent-2-200: #e7e5fe;
+  --color-accent-2-300: #d2cefd;
+  --color-accent-2-400: #b5afe8;
+  --color-accent-2-500: #9690c9;
+  --color-accent-2-600: #7972a9;
+  --color-accent-2-700: #5c5783;
+  --color-accent-2-800: #423e5d;
+  --color-accent-2-900: #2b293a;
+
+  /* Deck section-divider ground — review round 3: saturation as presence.
+     Dividers take a saturated deep indigo (hue 277, the neutral ramp's own
+     family; C 0.094 — written when the accent held C 0.030, before the
+     round-7 blurple raised it past the ground's) with a lighter bloom and
+     a ghost tint of the same hue, while the slide grounds stay
+     desaturated. Deck-scale fills only — not interface colors. */
+  --color-section: #262a60;
+  --color-section-glow: #353b80;
+  --color-section-ghost: #4c5397;
+
+  --font-heading: "Inter", system-ui, sans-serif;
+  --font-heading-weight: 500;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --space-1: 2.8px;
+  --space-2: 5.6px;
+  --space-3: 8.4px;
+  --space-4: 11.2px;
+  --space-6: 16.8px;
+  --space-8: 22.4px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+
+  /* Elevation — derived from the ground: soft ink-tinted shadows on a
+     light theme, a hairline edge + ambient darkness on a dark one. */
+  --shadow-sm: 0 0 0 1px #3f424d;
+  --shadow-md: 0 0 0 1px #595d6c, 0 6px 18px rgba(0,0,0,0.55);
+  --shadow-lg: 0 0 0 1px #9397ab, 0 16px 40px rgba(0,0,0,0.65);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
+
+.lighten{mix-blend-mode:lighten;background-color:transparent}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Components — built with the tokens above. Plain CSS
+   on plain HTML: no JavaScript, no build step. Each class is documented in
+   readme.md and demonstrated in foundations/ and components/.
+   ══════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-size: 15px; line-height: 1.55; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 var(--space-2);
+}
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 25px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; }
+h6 { letter-spacing: 0.08em; text-transform: uppercase; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+  font-size: 11px; margin-top: var(--space-1);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* — rules — */
+/* Rules fade to transparent at both ends instead of stopping cleanly — a
+   Nocturne signature. The ramp is 48px an end (one deck baseline unit),
+   painted from the same divider token. Freestanding rules fade; box
+   outlines, in-control separators, and short accent marks stay solid. */
+.hr {
+  height: 1px; border: 0; margin: var(--space-4) 0;
+  background: linear-gradient(to right,
+    transparent, var(--color-divider) 48px,
+    var(--color-divider) calc(100% - 48px), transparent);
+}
+
+/* — buttons — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; line-height: 1.2; color: var(--color-text); /* matches the .input's 14px —
+     the pair sits side by side in sign-up rows */
+  background: transparent; border: 1px solid transparent;
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  border-radius: var(--radius-md);
+}
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { color: var(--color-accent); border-color: var(--color-accent); }
+.btn-primary:hover { background: color-mix(in srgb, var(--color-accent) 12%, transparent); }
+.btn-primary:active { background: color-mix(in srgb, var(--color-accent) 22%, transparent); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: var(--space-1); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-icon { width: 36px; height: 36px; padding: 0; }
+.btn-block { width: 100%; margin-top: var(--space-2); }
+
+/* — forms — */
+.field > label {
+  display: block; font-size: 12px; margin-bottom: 5px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.input {
+  width: 100%; min-height: 36px; padding: 6px 10px; font: inherit;
+  font-size: 14px; color: var(--color-text); caret-color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+textarea.input { min-height: 90px; resize: vertical; }
+.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+.radio input, .seg-opt input {
+  position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+.radio .dot {
+  width: 16px; height: 16px; flex: none; border-radius: 50%;
+  border: 1.5px solid var(--color-divider);
+}
+.radio:hover .dot { border-color: var(--color-accent); }
+.radio input:checked + .dot {
+  border-color: var(--color-accent); background: var(--color-accent);
+  box-shadow: inset 0 0 0 4px var(--color-bg);
+}
+.radio input:focus-visible + .dot { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.seg {
+  display: inline-flex; overflow: hidden;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.seg-opt {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; font-size: 13px; cursor: pointer;
+}
+.seg-opt + .seg-opt { border-left: 1px solid var(--color-divider); }
+.seg-opt:has(input:checked) { color: var(--color-accent); box-shadow: inset 0 0 0 1px var(--color-accent); }
+.seg-opt:not(:has(input:checked)):hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.seg-opt:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
+
+/* — cards — */
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface);
+}
+.card-kicker { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.card-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 17px; line-height: 1.2;
+}
+.card-body { margin: 0; font-size: 13px; opacity: 0.8; flex: 1; }
+.card-meta {
+  display: flex; align-items: center; gap: 6px; font-size: 11px;
+  color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
+
+/* — tags — */
+.tag {
+  display: inline-flex; align-items: center; font-size: 11px;
+  letter-spacing: 0.02em; padding: 3px 10px;
+  border-radius: calc(var(--radius-md) * 0.75);
+}
+.tag-accent { background: var(--color-accent-800); color: var(--color-accent-100); }
+.tag-accent-2 { background: var(--color-accent-2-800); color: var(--color-accent-2-100); }
+.tag-neutral { background: var(--color-neutral-800); color: var(--color-neutral-100); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* — navigation — */
+.nav {
+  display: flex; align-items: center; gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: none;
+}
+.nav-brand {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 18px; margin-right: auto;
+}
+.nav a { color: inherit; text-decoration: none; font-size: 14px; }
+.nav a:hover, .nav a[aria-current='page'] { color: var(--color-accent); }
+
+/* — tables — */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th {
+  text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  padding: var(--space-2); border-bottom: 1px solid transparent; /* keeps layout; the row paints the fading rule */
+}
+.table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid transparent;
+}
+/* Row rules as row-level strips so the end-fade spans the row, not each cell. */
+.table thead tr {
+  background: linear-gradient(to right,
+    transparent, var(--color-divider) 48px,
+    var(--color-divider) calc(100% - 48px), transparent) no-repeat bottom / 100% 1px;
+}
+.table tbody tr {
+  background: linear-gradient(to right,
+    transparent, color-mix(in srgb, var(--color-text) 8%, transparent) 48px,
+    color-mix(in srgb, var(--color-text) 8%, transparent) calc(100% - 48px), transparent) no-repeat bottom / 100% 1px;
+}
+.table tbody tr:hover {
+  /* the hover tint layers over the row rule, which keeps painting */
+  background:
+    linear-gradient(color-mix(in srgb, var(--color-text) 4%, transparent),
+                    color-mix(in srgb, var(--color-text) 4%, transparent)) no-repeat 0 0 / 100% 100%,
+    linear-gradient(to right,
+      transparent, color-mix(in srgb, var(--color-text) 8%, transparent) 48px,
+      color-mix(in srgb, var(--color-text) 8%, transparent) calc(100% - 48px), transparent) no-repeat bottom / 100% 1px;
+}
+
+/* — dialog — */
+.dialog-backdrop {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
+}
+.dialog {
+  width: min(440px, 100%); display: flex; flex-direction: column; gap: var(--space-3);
+  padding: var(--space-4); border-radius: var(--radius-lg);
+  background: var(--color-surface); box-shadow: var(--shadow-lg);
+}
+.dialog-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 20px;
+}
+.dialog-body { font-size: 14px; opacity: 0.85; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
+
+</style>
+<script src="assets/eca9841a-5510-4d7b-a6c1-df7aee3c4785.js"></script>
+<style>
+body{margin:0;background:#0e0f18;font-family:Inter,system-ui,sans-serif}
+html{background:#0e0f18}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(255,255,255,.08);scroll-margin-top:16px;background:#0e0f18}
+.logo{width:32px;height:32px;object-fit:contain;background:#e4e7f5;border-radius:6px;padding:4px;box-sizing:border-box;flex:none}
+.logo-lg{width:38px;height:38px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#e9e9ed;color:#161826;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 Inter,system-ui,sans-serif;color:#e9e9ed}
+.dv-opts{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(255,255,255,.1);color:#e9e9ed;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 Inter,system-ui,sans-serif;color:rgba(233,233,237,.55)}
+.dv-card{max-width:100%;background:#161826;border:1px solid rgba(255,255,255,.09);border-radius:8px;box-shadow:0 16px 40px rgba(0,0,0,.5);overflow:hidden}
+.dv-opt:target .dv-oid{background:#9184d9;color:#161826}
+.dv-next{margin:22px 0 0;font:12px/1.5 Inter,system-ui,sans-serif;color:rgba(233,233,237,.5)}
+.dv-groep{width:100%;font:600 10px ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:rgba(233,233,237,.35);margin:14px 0 -14px}
+.mono{font-family:ui-monospace,Menlo,monospace}
+.ph{color:rgba(145,132,217,.75);font-family:ui-monospace,Menlo,monospace;font-size:.86em}
+@keyframes sweep{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rise{animation:rise .7s cubic-bezier(.22,1,.36,1) both}
+.sweepline{transform-origin:left;animation:sweep 1.1s cubic-bezier(.22,1,.36,1) both}
+@keyframes type{from{max-width:0}to{max-width:100%}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.t{display:inline-block;width:max-content;max-width:100%;overflow:hidden;white-space:nowrap;vertical-align:bottom;animation:type .5s steps(34,end) both}
+.caret{display:inline-block;width:7px;height:14px;background:#9184d9;vertical-align:-2px;margin-left:2px;animation:blink 1.1s step-end infinite}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.pre{opacity:0;color:#9184d9;animation:fadein .12s linear both}
+.marquee{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 60px,#000 calc(100% - 60px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 60px,#000 calc(100% - 60px),transparent 100%)}
+.marquee-track{display:flex;flex-wrap:nowrap;gap:7px;width:max-content;animation:marquee 110s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee .tag{flex:0 0 auto;white-space:nowrap}
+.contact-card:hover{border-color:rgba(145,132,217,.6)!important;transform:translateY(-2px);background:linear-gradient(180deg,rgba(145,132,217,.09),rgba(145,132,217,.02))!important}
+.term-body::-webkit-scrollbar{width:10px}
+.term-body::-webkit-scrollbar-track{background:rgba(145,132,217,.06);border-radius:8px}
+.term-body::-webkit-scrollbar-thumb{background:rgba(145,132,217,.45);border-radius:8px;border:2px solid rgba(22,24,38,.6)}
+.term-body::-webkit-scrollbar-thumb:hover{background:rgba(145,132,217,.7)}
+.term-body{scrollbar-color:rgba(145,132,217,.55) rgba(145,132,217,.08);scrollbar-width:thin}
+</style>
 </head>
-<body class="bg-primary min-h-screen text-gray-100">
-    <!-- Vue Loading Screen -->
-    <div id="vue-loading-screen" class="vue-loading-screen">
-        <div class="loading-rings-container">
-            <div class="loading-ring ring-1"></div>
-            <div class="loading-ring ring-2"></div>
-            <div class="loading-ring ring-3"></div>
-            <div class="loading-ring ring-4"></div>
-            <div class="loading-ring ring-5"></div>
-        </div>
-        <p class="loading-text">Loading...</p>
+<body style="background:var(--color-bg);color:var(--color-text)">
+
+<div style="max-width:1360px;margin:0 auto;background:#161826;box-shadow:0 0 0 1px rgba(233,233,237,.06)">
+
+  <!-- ═════════════════ TOP NAV ═════════════════ -->
+  <div style="position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:58px;background:rgba(22,24,38,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(233,233,237,.1)">
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="display:block;width:22px;height:1px;background:#9184d9" class="sweepline"></span>
+      <span style="font:500 14px Inter,sans-serif;letter-spacing:-.01em">Jacob Stanaford</span>
+      <span class="mono" style="font-size:10.5px;letter-spacing:.14em;color:rgba(233,233,237,.4)">SOFTWARE ENGINEER</span>
     </div>
-    <div id="app">
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-secondary/90 backdrop-blur-sm shadow-lg z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0">
-                    <img src="img/jacobstanaford.jpeg" alt="Developer Photo" class="h-16 w-16 rounded-full border-2 border-gray-600 shadow" />
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">{{ content.navigation?.about || 'About' }}</a>
-                        <a href="#languages-tools" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">{{ content.navigation?.languagesTools || 'Languages & Tools' }}</a>
-                        <a href="#experience" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">{{ content.navigation?.experience || 'Experience' }}</a>
-                        <a href="#education" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">{{ content.navigation?.education || 'Education' }}</a>
-                        <a href="#github" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">{{ content.navigation?.github || 'GitHub' }}</a>
-                        <a href="#about-me" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">{{ content.navigation?.aboutMe || 'About Me' }}</a>
-                        <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors">{{ content.navigation?.contact || 'Contact' }}</a>
-                        <a href="gallery.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-purple-700 bg-purple-600 text-white transition-colors">{{ content.navigation?.gallery || 'Gallery' }}</a>
-                    </div>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button type="button" @click="toggleMobileMenu" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                        <span class="sr-only">Open main menu</span>
-                        <!-- Menu icon -->
-                        <svg :class="['h-6 w-6 transition-transform duration-300', mobileMenuOpen ? 'hidden' : 'block']" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <!-- X icon -->
-                        <svg :class="['h-6 w-6 transition-transform duration-300', mobileMenuOpen ? 'block' : 'hidden']" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+    <div style="display:flex;align-items:center;gap:24px">
+      <div style="display:flex;gap:22px;font:400 13px Inter,sans-serif;color:rgba(233,233,237,.62)">
+        <a href="#now" style="color:#e9e9ed;text-decoration:none">Now</a>
+        <a href="#experience" style="color:inherit;text-decoration:none">Experience</a>
+        <a href="#education" style="color:inherit;text-decoration:none">Education</a>
+        <a href="#work" style="color:inherit;text-decoration:none">Work</a>
+        <a href="#contact" style="color:inherit;text-decoration:none">Contact</a>
+      </div>
+      <a href="#contact" class="btn btn-primary" style="text-decoration:none;height:32px;padding:0 14px;font-size:13px">Contact</a>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:330px 1fr">
+
+    <!-- ═════════════════ LEFT SIDEBAR ═════════════════ -->
+    <aside style="border-right:1px solid rgba(233,233,237,.1);padding:32px 28px;background:linear-gradient(180deg,#1a1c2a,#161826);align-self:start;position:sticky;top:58px;max-height:calc(100vh - 58px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(145,132,217,.35) transparent">
+      <div style="border-radius:8px;overflow:hidden;background:#161826">
+        <img src="img/jacobstanaford.jpeg" alt="Jacob Stanaford" style="width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 25%">
+      </div>
+      <h1 style="font-size:30px;letter-spacing:-.025em;margin:22px 0 8px;line-height:1.05">Jacob<br>Stanaford</h1>
+      <div style="height:1px;background:linear-gradient(to right,#9184d9,rgba(145,132,217,0));margin-bottom:16px" class="sweepline"></div>
+      <p style="font-size:13px;line-height:1.6;color:rgba(233,233,237,.62)">Full-stack software engineer focused on cloud platform architecture, DevOps, and production reliability. Currently owning cloud modernization at a marketing technology firm. Pursuing an M.S. in Computer Science at Stevens Institute of Technology.</p>
+      <div style="display:flex;flex-direction:column;gap:9px;margin-top:20px">
+        <a href="mailto:jacobstanafordprofessional@gmail.com" class="btn btn-primary btn-block" style="text-decoration:none">Email</a>
+        <a href="img/resource/JacobS_Resume.pdf" class="btn btn-ghost btn-block" style="text-decoration:none">Résumé</a>
+        <a href="https://github.com/jstanaford" class="btn btn-ghost btn-block" style="text-decoration:none">GitHub</a>
+        <a href="https://www.linkedin.com/in/jacobstanaford/" class="btn btn-ghost btn-block" style="text-decoration:none">LinkedIn</a>
+      </div>
+    </aside>
+
+    <!-- ═════════════════ MAIN CONTENT ═════════════════ -->
+    <main style="min-width:0">
+
+      <!-- ─── NOW ─── -->
+      <section id="now" style="padding:34px 40px;border-bottom:1px solid rgba(233,233,237,.1)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px">
+          <h2 style="font-size:22px;letter-spacing:-.02em;margin:0">Welcome</h2>
+          <span class="mono" style="font-size:11px;color:rgba(233,233,237,.35)">SNAPSHOT</span>
         </div>
-    </nav>
+        <div style="border:1px solid rgba(233,233,237,.14);border-radius:8px;overflow:hidden;background:#12131f">
+          <div style="display:flex;align-items:center;gap:7px;padding:9px 13px;border-bottom:1px solid rgba(233,233,237,.1)">
+            <span style="width:9px;height:9px;border-radius:50%;background:#595d6c;display:block"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#595d6c;display:block"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#9184d9;display:block"></span>
+            <span class="mono" style="font-size:10.5px;color:rgba(233,233,237,.4);margin-left:6px">~/portfolio</span>
+          </div>
+          <div id="term-body" class="mono term-body" style="font-size:12.5px;line-height:1.95;padding:16px 18px;color:rgba(233,233,237,.8);max-height:460px;overflow-y:auto;overflow-x:hidden">
+            <div><span class="pre" style="animation-delay:.05s">$</span> <span class="t" style="animation:type .42s steps(6,end) both;animation-delay:.4s">whoami</span></div>
+            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:1.4s">jacob · software engineer, cloud platform &amp; devops</span></div>
 
-    <!-- Mobile Menu Overlay -->
-    <transition name="fade">
-        <div v-if="mobileMenuOpen" @click="closeMobileMenu" class="fixed inset-0 bg-secondary/95 backdrop-blur-sm z-40">
-            <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <a @click.prevent="scrollToSection('about')" href="#about" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">{{ content.navigation?.about || 'About' }}</a>
-                <a @click.prevent="scrollToSection('languages-tools')" href="#languages-tools" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">{{ content.navigation?.languagesTools || 'Languages & Tools' }}</a>
-                <a @click.prevent="scrollToSection('experience')" href="#experience" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">{{ content.navigation?.experience || 'Experience' }}</a>
-                <a @click.prevent="scrollToSection('education')" href="#education" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">{{ content.navigation?.education || 'Education' }}</a>
-                <a @click.prevent="scrollToSection('github')" href="#github" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">{{ content.navigation?.github || 'GitHub' }}</a>
-                <a @click.prevent="scrollToSection('about-me')" href="#about-me" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">{{ content.navigation?.aboutMe || 'About Me' }}</a>
-                <a @click.prevent="scrollToSection('contact')" href="#contact" class="text-xl font-medium text-white hover:text-purple-300 transition-colors">{{ content.navigation?.contact || 'Contact' }}</a>
-                <a href="gallery.html" class="text-xl font-medium text-purple-300 hover:text-white transition-colors">{{ content.navigation?.gallery || 'Gallery' }}</a>
-            </div>
+            <div style="margin-top:9px"><span class="pre" style="animation-delay:2.45s">$</span> <span class="t" style="animation:type .21s steps(3,end) both;animation-delay:2.8s">now</span></div>
+            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:3.8s">software engineer @ ironmark</span></div>
+            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:4.6s">m.s. computer science @ stevens institute of technology</span></div>
+            <div style="color:rgba(233,233,237,.6)"><span class="t" style="animation-delay:5.4s">open to part-time contract engagements</span></div>
+
+            <div style="margin-top:9px"><span class="pre" style="animation-delay:6.45s">$</span> <span class="t" style="animation:type 1.4s steps(20,end) both;animation-delay:6.8s">skills-and-expertise</span></div>
+
+            <div style="margin-top:6px"><span style="color:#9184d9"><span class="t" style="animation-delay:8.4s">[languages]</span></span> <span style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:8.9s">php · typescript · python · c# · sql · bash</span></span></div>
+            <div><span style="color:#9184d9"><span class="t" style="animation-delay:9.4s">[cloud &amp; devops]</span></span> <span style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:9.9s">aws · gcp · azure · terraform · docker · github actions</span></span></div>
+            <div><span style="color:#9184d9"><span class="t" style="animation-delay:10.4s">[frameworks]</span></span> <span style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:10.9s">laravel · .net · fastapi · react · node.js</span></span></div>
+            <div><span style="color:#9184d9"><span class="t" style="animation-delay:11.4s">[data]</span></span> <span style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:11.9s">mysql · postgresql · aurora · sql server · rest apis</span></span></div>
+            <div><span style="color:#9184d9"><span class="t" style="animation-delay:12.4s">[ai tooling]</span></span> <span style="color:#b5abfc"><span class="t" style="animation-delay:12.9s">claude code · cursor · github copilot · mcp · llama</span></span></div>
+            <div><span style="color:#9184d9"><span class="t" style="animation-delay:13.4s">[cms &amp; commerce]</span></span> <span style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:13.9s">wordpress · shopify · woocommerce · lunar</span></span></div>
+            <div><span style="color:#9184d9"><span class="t" style="animation-delay:14.4s">[practices]</span></span> <span style="color:rgba(233,233,237,.65)"><span class="t" style="animation-delay:14.9s">devops · sre · ci/cd · incident response · ai-assisted engineering</span></span></div>
+
+            <div style="margin-top:9px"><span class="pre" style="animation-delay:16s">$</span><span class="caret"></span></div>
+          </div>
+          <script>
+          (function(){
+            var term = document.getElementById('term-body');
+            if (!term) return;
+            // Start with the terminal scrolled to the top so the reveal begins at $ whoami.
+            term.scrollTop = 0;
+            var userScrolled = false;
+            term.addEventListener('wheel', function(){ userScrolled = true; }, {passive:true});
+            term.addEventListener('touchstart', function(){ userScrolled = true; }, {passive:true});
+
+            // For each typed span, schedule a minimum scroll-into-view when its typing animation starts.
+            // Behavior: only scroll when the row is actually about to fall off the bottom; move by the
+            // smallest amount that puts the row inside the visible area with a small bottom buffer.
+            // Skip scrolls smaller than a threshold so we don't jitter row-by-row.
+            var BOTTOM_BUFFER = 40;   // px kept below the newly typed row
+            var MIN_SHIFT = 24;       // don't fire a scroll shorter than this
+            var spans = term.querySelectorAll('.t');
+            spans.forEach(function(sp){
+              var delayStr = sp.style.animationDelay || '0s';
+              var ms = parseFloat(delayStr) * 1000;
+              setTimeout(function(){
+                if (userScrolled) return;
+                var row = sp.closest('div');
+                if (!row) return;
+                var rowBottom = row.offsetTop + row.offsetHeight;
+                var visibleBottom = term.scrollTop + term.clientHeight;
+                // Only scroll when the new row would fall below the visible area.
+                if (rowBottom > visibleBottom - 8) {
+                  // Scroll by the minimum amount that puts the row inside the viewport with a buffer.
+                  var target = Math.max(0, rowBottom - term.clientHeight + BOTTOM_BUFFER);
+                  var delta = target - term.scrollTop;
+                  if (delta >= MIN_SHIFT) {
+                    term.scrollTo({top: target, behavior: 'smooth'});
+                  }
+                }
+              }, ms);
+            });
+          })();
+          </script>
         </div>
-    </transition>
+      </section>
 
-    <!-- Main content sections -->
-    <main class="pt-16">
-        <!-- Hero Section with Orbiting Objects -->
-        <section id="about" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-primary to-secondary">
-            <!-- Animated Gradient Blobs -->
-            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/3 z-0">
-                <div class="w-96 h-96 bg-gradient-to-tr from-purple-500 via-pink-500 to-yellow-400 opacity-30 rounded-full filter blur-3xl animate-blob"></div>
-            </div>
-            <div class="absolute bottom-0 right-1/4 transform translate-x-1/2 translate-y-1/3 z-0">
-                <div class="w-80 h-80 bg-gradient-to-tr from-cyan-400 via-blue-500 to-purple-600 opacity-30 rounded-full filter blur-2xl animate-blob animation-delay-2000"></div>
-            </div>
-            <!-- CSS Wave SVG at the bottom -->
-            <div class="absolute inset-x-0 bottom-0">
-                <svg viewBox="0 0 1440 320" class="w-full h-40" preserveAspectRatio="none">
-                    <path fill="#2d2d2d" fill-opacity="1" d="M0,224L60,197.3C120,171,240,117,360,117.3C480,117,600,171,720,197.3C840,224,960,224,1080,197.3C1200,171,1320,117,1380,90.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-                </svg>
-            </div>
-            <!-- Three.js Orbiting Objects Background -->
-            <div id="hero-three-container" class="absolute inset-0 z-0 pointer-events-none" style="opacity: 0.4;"></div>
-            
-            <div class="relative z-10 flex flex-col items-center justify-center px-4">
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-center">Jacob Stanaford's Portfolio</h1>
-                <p class="text-lg md:text-xl text-center max-w-2xl mb-8">
-                    <template v-if="content.hero?.intro?.default">
-                        <template v-for="(line, index) in content.hero.intro.default" :key="index">
-                            {{ line }}<br v-if="index < content.hero.intro.default.length - 1"><br v-if="index < content.hero.intro.default.length - 1">
-                        </template>
-                    </template>
-                    <template v-else>
-                        Hello, my name is Jacob Stanaford! Welcome to my portfolio website.<br>
-                        I am beyond excited to share my experiences and background on this site!<br>
-                        Thank you for stopping by and enjoy!
-                    </template>
-                </p>
-                <blockquote class="italic text-gray-400 text-center max-w-xl mt-8 border-l-4 border-gray-600 pl-4">
-                    <template v-if="content.hero?.quote">
-                        <template v-for="(line, index) in content.hero.quote.text" :key="index">
-                            {{ line }}<br v-if="index < content.hero.quote.text.length - 1">
-                        </template>
-                        <span class="block mt-2 font-semibold">{{ content.hero.quote.author }}</span>
-                    </template>
-                    <template v-else>
-                        A programming language is for thinking about programs,<br>
-                        not for expressing programs you've already thought of.<br>
-                        It should be a pencil, not a pen.<br>
-                        <span class="block mt-2 font-semibold">-Paul Graham</span>
-                    </template>
-                </blockquote>
-            </div>
-        </section>
-		
-		<div class="w-full h-14 bg-gradient-to-b from-secondary to-purple-100"></div>
-       
-		
-		<!-- Programming Languages & Tools Slider -->
-        <section id="languages-tools" class="relative min-h-[600px] flex flex-col items-center justify-center bg-purple-100 py-12 overflow-hidden">
-            <!-- Floating Programming Language Names (animated) -->
-            <span class="hidden md:block floating-lang absolute left-10 top-8 text-4xl font-extrabold text-purple-900/20 rotate-[-12deg] select-none pointer-events-none animate-float1">Bash</span>
-            <span class="hidden md:block floating-lang absolute right-16 top-16 text-3xl font-bold text-purple-900/20 rotate-12 select-none pointer-events-none animate-float2">Python</span>
-            <span class="hidden md:block floating-lang absolute left-1/4 bottom-10 text-2xl font-bold text-purple-900/20 -rotate-6 select-none pointer-events-none animate-float3">MySQL</span>
-            <span class="hidden md:block floating-lang absolute right-1/4 bottom-20 text-4xl font-extrabold text-purple-900/20 rotate-3 select-none pointer-events-none animate-float4">PHP</span>
-            <span class="hidden md:block floating-lang absolute left-1/2 top-1/3 text-3xl font-bold text-purple-900/20 -rotate-12 select-none pointer-events-none animate-float5">Linux</span>
-            <span class="hidden md:block floating-lang absolute right-1/3 top-1/2 text-2xl font-bold text-purple-900/20 rotate-6 select-none pointer-events-none animate-float6">C#</span>
-            <span class="hidden md:block floating-lang absolute left-20 bottom-1/4 text-2xl font-bold text-purple-900/20 rotate-12 select-none pointer-events-none animate-float7">Typescript</span>
-            <span class="hidden md:block floating-lang absolute right-24 top-1/4 text-2xl font-bold text-purple-900/20 -rotate-3 select-none pointer-events-none animate-float8">Machine Learning</span>
-            <span class="hidden md:block floating-lang absolute left-1/3 bottom-1/3 text-2xl font-bold text-purple-900/20 rotate-6 select-none pointer-events-none animate-float9">Linear Algebra</span>
+      <!-- ─── EXPERIENCE ─── -->
+      <section id="experience" style="padding:34px 40px;border-bottom:1px solid rgba(233,233,237,.1)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px">
+          <h2 style="font-size:22px;letter-spacing:-.02em;margin:0">Experience</h2>
+          <span class="mono" style="font-size:11px;color:rgba(233,233,237,.35)">05 positions</span>
+        </div>
+        <div style="display:flex;flex-direction:column">
 
-            <h2 class="text-3xl font-bold mb-8 text-center text-purple-900 z-10">{{ content.languagesTools?.title || "Programming Languages & Tools" }}</h2>
-            <div class="relative w-full max-w-xs flex items-center justify-center z-10">
-                <!-- Left Arrow -->
-                <button @click="prevSlide" class="absolute left-0 z-10 p-2 rounded-full bg-purple-200 hover:bg-purple-300 transition-colors">
-                    <svg class="w-6 h-6 text-purple-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
-                </button>
-                <!-- Image Display -->
-                <transition name="slide-fade" mode="out-in">
-                    <div :key="sliderIndex" class="w-56 h-56 flex items-center justify-center bg-white rounded-xl shadow-lg overflow-hidden border-4 border-purple-200">
-                        <img :src="currentSlide.src" :alt="currentSlide.alt" class="object-contain w-44 h-44 transition-all duration-300" />
-                    </div>
-                </transition>
-                <!-- Right Arrow -->
-                <button @click="nextSlide" class="absolute right-0 z-10 p-2 rounded-full bg-purple-200 hover:bg-purple-300 transition-colors">
-                    <svg class="w-6 h-6 text-purple-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
+          <div style="padding:20px 0;border-bottom:1px solid rgba(233,233,237,.1);display:flex;gap:14px;align-items:flex-start">
+            <img src="img/experience/ironmark_logo.png" alt="Ironmark" class="logo logo-lg">
+            <div style="flex:1">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+                <div style="font:500 16px Inter,sans-serif">Ironmark</div>
+                <span style="font-size:12.5px;color:#b5abfc">Software Engineer</span>
+                <span class="mono" style="font-size:11px;color:rgba(233,233,237,.4)">Feb 2026 – Present · Remote</span>
+              </div>
+              <div style="font-size:13px;color:rgba(233,233,237,.7);line-height:1.6;margin-top:8px;max-width:72ch">
+                Architecting a cloud platform migration to AWS for a sub-company, owning DevOps and CI/CD, and leading production incident response for a marketing automation stack. Additive to hands-on PHP and .NET support across multiple sub-companies. Authoring the modernization strategy, deployment methodology, and observability practices the team relies on.
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">
+                <span class="tag tag-outline">AWS</span><span class="tag tag-outline">Terraform</span><span class="tag tag-outline">GitHub Actions</span><span class="tag tag-outline">Laravel</span><span class="tag tag-outline">OpenSwoole</span><span class="tag tag-outline">.NET</span><span class="tag tag-outline">MySQL</span>
+              </div>
             </div>
-            <!-- Caption -->
-            <transition name="fade">
-                <div :key="sliderIndex" class="mt-6 text-lg text-purple-900 font-semibold text-center z-10">{{ currentSlide.alt }}</div>
-            </transition>
-            <p class="mt-4 max-w-xl text-center text-purple-800 text-base z-10">
-                <template v-if="portfolioStats && portfolioStats.technologies.length > 0">
-                    These are the technologies I have the most professional experience with, including {{ portfolioStats.technologies.slice(0, 4).join(', ') }}, and more. Each of these tools has played a significant role in my journey as a developer.
-                </template>
-                <template v-else>
-                    {{ content.languagesTools?.description?.default || "These are the technologies I have the most professional experience with, ranging from backend scripting and databases to modern programming languages and machine learning. Each of these tools has played a significant role in my journey as a developer." }}
-                </template>
-            </p>
-             </section>
-        <!-- Smooth Tall Gradient Fade Transition -->
-        <div class="w-full h-28 bg-gradient-to-b from-purple-100 to-secondary"></div>
-        <section id="experience" class="min-h-screen flex flex-col items-center justify-center bg-secondary py-16 px-4">
-            <h2 class="text-4xl font-bold mb-12 text-purple-100 text-center">{{ content.experience?.title || "Professional Experience" }}</h2>
-            <!-- Ironmark Experience -->
-            <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg p-8 mb-10 w-full max-w-4xl border-l-8 border-blue-500">
-                <img src="img/experience/ironmark_logo.png" alt="Ironmark Logo" class="w-28 h-28 object-contain rounded-lg shadow-md mb-6 md:mb-0 md:mr-10 bg-gray-100" />
-                <div v-if="content.experience?.ironmark">
-                    <h3 class="text-2xl font-bold text-blue-900">{{ content.experience.ironmark.company }}</h3>
-                    <p class="text-blue-700 font-semibold mb-1">{{ content.experience.ironmark.period }}</p>
-                    <ul class="list-disc list-inside text-gray-900 mb-2">
-                        <li>{{ content.experience.ironmark.role }}</li>
-                    </ul>
-                    <p class="text-gray-700 mb-3">
-                        {{ content.experience.ironmark.description }}
-                    </p>
-                    <p class="text-gray-700 font-semibold mb-2">{{ content.experience.ironmark.contributions?.title || "Key Contributions:" }}</p>
-                    <ul class="list-disc list-inside text-gray-700 space-y-1">
-                        <li v-for="item in (content.experience.ironmark.contributions?.items || [])" :key="item.title">
-                            <strong>{{ item.title }}</strong> {{ item.text }}
-                        </li>
-                    </ul>
-                    <p class="text-gray-600 text-sm mt-3 italic">
-                        {{ content.experience.ironmark.technologies }}
-                    </p>
-                </div>
-            </div>
-            <!-- YGS Group Experience -->
-            <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg p-8 mb-10 w-full max-w-4xl border-l-8 border-green-500">
-                <img src="img/experience/the_ygs_group_logo.jpeg" alt="YGS Group Logo" class="w-28 h-28 object-contain rounded-lg shadow-md mb-6 md:mb-0 md:mr-10 bg-gray-100" />
-                <div v-if="content.experience?.ygsGroup">
-                    <h3 class="text-2xl font-bold text-green-900">{{ content.experience.ygsGroup.company }}</h3>
-                    <p class="text-green-700 font-semibold mb-1">{{ content.experience.ygsGroup.period }}</p>
-                    <ul class="list-disc list-inside text-gray-900 mb-2">
-                        <li>{{ content.experience.ygsGroup.role }}</li>
-                    </ul>
-                    <p class="text-gray-700 mb-3">
-                        {{ content.experience.ygsGroup.description }}
-                    </p>
-                    <p class="text-gray-700 font-semibold mb-2">{{ content.experience.ygsGroup.contributions?.title || "Key Contributions:" }}</p>
-                    <ul class="list-disc list-inside text-gray-700 space-y-1">
-                        <li v-for="item in (content.experience.ygsGroup.contributions?.items || [])" :key="item.title">
-                            <strong>{{ item.title }}</strong> {{ item.text }}
-                        </li>
-                    </ul>
-                    <p class="text-gray-600 text-sm mt-3 italic">
-                        {{ content.experience.ygsGroup.technologies }}
-                    </p>
-                </div>
-            </div>
-            <!-- WebFX Experience -->
-            <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg p-8 mb-10 w-full max-w-4xl border-l-8 border-purple-500">
-                <img src="img/experience/webfx_logo.jpg" alt="WebFX Logo" class="w-28 h-28 object-contain rounded-lg shadow-md mb-6 md:mb-0 md:mr-10 bg-gray-100" />
-                <div v-if="content.experience?.webfx">
-                    <h3 class="text-2xl font-bold text-purple-900">{{ content.experience.webfx.company }}</h3>
-                    <p class="text-purple-700 font-semibold mb-1">{{ content.experience.webfx.period }}</p>
-                    <ul class="list-disc list-inside text-gray-900 mb-2">
-                        <li>{{ content.experience.webfx.role }}</li>
-                    </ul>
-                    <p class="text-gray-700">
-                        {{ content.experience.webfx.description }}
-                    </p>
-                </div>
-            </div>
-            <!-- Prosper IT Consulting Internships -->
-            <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg p-8 w-full max-w-4xl border-l-8 border-cyan-500 mb-6">
-                <img src="img/experience/prosper_it_consulting_logo.jpg" alt="Prosper IT Consulting Logo" class="w-24 h-24 object-contain rounded-lg shadow-md mb-6 md:mb-0 md:mr-10 bg-gray-100" />
-                <div>
-                    <div v-if="content.experience?.prosperIt1">
-                        <h3 class="text-xl font-bold text-cyan-900">{{ content.experience.prosperIt1.company }}</h3>
-                        <p class="text-cyan-700 font-semibold mb-1">{{ content.experience.prosperIt1.period }}</p>
-                        <p class="text-gray-700 mb-4">
-                            {{ content.experience.prosperIt1.description }}
-                        </p>
-                    </div>
-                    <div v-if="content.experience?.prosperIt2">
-                        <h3 class="text-xl font-bold text-cyan-900">{{ content.experience.prosperIt2.company }}</h3>
-                        <p class="text-cyan-700 font-semibold mb-1">{{ content.experience.prosperIt2.period }}</p>
-                        <p class="text-gray-700">
-                            {{ content.experience.prosperIt2.description }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-		
-		<!-- Projects Showcase (Hidden for now) -->
-		<section id="projects" class="hidden min-h-screen flex flex-col items-center justify-center bg-white py-16 px-4">
-            <h2 class="text-4xl font-bold mb-8 text-purple-900 text-center">YGS Group Projects</h2>
-            <p class="text-lg text-gray-700 mb-8 text-center max-w-3xl">
-                Highlights of my work at YGS Group - building enterprise platforms, APIs, and development tools across diverse technology stacks.
-            </p>
-            
-            <!-- Statistics Cards -->
-            <div v-if="statistics" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 w-full max-w-5xl">
-                <div class="bg-purple-50 rounded-xl p-6 text-center border-l-4 border-purple-500">
-                    <div class="text-3xl font-extrabold text-purple-900">{{ formatNumber(statistics.total || 0) }}</div>
-                    <div class="text-sm text-purple-700 mt-1">Projects</div>
-                </div>
-                <div class="bg-blue-50 rounded-xl p-6 text-center border-l-4 border-blue-500">
-                    <div class="text-3xl font-extrabold text-blue-900">{{ formatNumber(statistics.totalLinesOfCode || 0).toLocaleString() }}</div>
-                    <div class="text-sm text-blue-700 mt-1">Lines of Code</div>
-                </div>
-                <div class="bg-cyan-50 rounded-xl p-6 text-center border-l-4 border-cyan-500">
-                    <div class="text-3xl font-extrabold text-cyan-900">{{ formatNumber(statistics.totalFiles || 0).toLocaleString() }}</div>
-                    <div class="text-sm text-cyan-700 mt-1">Files</div>
-                </div>
-                <div class="bg-pink-50 rounded-xl p-6 text-center border-l-4 border-pink-500">
-                    <div class="text-3xl font-extrabold text-pink-900">{{ Object.keys(statistics.byTechnology || {}).length }}</div>
-                    <div class="text-sm text-pink-700 mt-1">Technologies</div>
-                </div>
-            </div>
-            
-            <!-- Filters -->
-            <div class="w-full max-w-5xl mb-8">
-                <div class="flex flex-col md:flex-row gap-4">
-                    <!-- Search -->
-                    <input 
-                        v-model="searchQuery"
-                        type="text" 
-                        placeholder="Search projects or technologies..." 
-                        class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                    />
-                    <!-- Category Filter -->
-                    <select 
-                        v-model="selectedCategory"
-                        class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                    >
-                        <option value="all">All Categories</option>
-                        <option v-for="cat in categories" :key="cat" :value="cat">{{ cat.charAt(0).toUpperCase() + cat.slice(1) }}</option>
-                    </select>
-                </div>
-            </div>
-            
-            <!-- Projects Grid -->
-            <div class="w-full max-w-6xl">
-                <div v-if="loading" class="text-center py-12">
-                    <p class="text-gray-500">Loading projects...</p>
-                </div>
-                <div v-else-if="filteredProjects.length === 0" class="text-center py-12">
-                    <p class="text-gray-500">No projects found matching your criteria.</p>
-                </div>
-                <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div 
-                        v-for="project in filteredProjects" 
-                        :key="project.id"
-                        class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow hover:border-purple-300"
-                    >
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-bold text-gray-900">{{ project.displayName || project.name }}</h3>
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full"
-                                  :class="{
-                                      'bg-purple-100 text-purple-800': project.category === 'api',
-                                      'bg-blue-100 text-blue-800': project.category === 'platform',
-                                      'bg-green-100 text-green-800': project.category === 'tool'
-                                  }">
-                                {{ project.category }}
-                            </span>
-                        </div>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">{{ project.description }}</p>
-                        <div class="mb-4">
-                            <div class="flex flex-wrap gap-2">
-                                <span 
-                                    v-for="tech in (project.technologies || []).slice(0, 4)" 
-                                    :key="tech"
-                                    class="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded"
-                                >
-                                    {{ tech }}
-                                </span>
-                                <span v-if="(project.technologies || []).length > 4" class="px-2 py-1 text-xs text-gray-500">
-                                    +{{ (project.technologies || []).length - 4 }} more
-                                </span>
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between text-xs text-gray-500">
-                            <span>{{ formatNumber(project.metrics?.linesOfCode || 0).toLocaleString() }} LOC</span>
-                            <span>{{ project.metrics?.files || 0 }} files</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Client Sites Note -->
-            <div class="mt-12 w-full max-w-3xl bg-purple-50 rounded-xl p-6 border-l-4 border-purple-400">
-                <h3 class="text-lg font-bold text-purple-900 mb-2">Enterprise E-Commerce Platforms</h3>
-                <p class="text-purple-800 text-sm">
-                    Additionally, I've led teams to build multiple large-scale Laravel/Lunar PHP e-commerce solutions, 
-                    integrating payment processing, shipping APIs, and custom template systems. These platforms handle 
-                    thousands of orders daily with robust automation and queue-based processing.
-                </p>
-            </div>
-        </section>
+          </div>
 
-		<div class="w-full h-14 bg-gradient-to-b from-white to-gray-100"></div>
-       
+          <div style="padding:20px 0;border-bottom:1px solid rgba(233,233,237,.1);display:flex;gap:14px;align-items:flex-start">
+            <img src="img/experience/the_ygs_group_logo.jpeg" alt="The YGS Group" class="logo logo-lg">
+            <div style="flex:1">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+                <div style="font:500 16px Inter,sans-serif">The YGS Group</div>
+                <span style="font-size:12.5px;color:#b5abfc">Senior Software Engineer, Full Stack</span>
+                <span class="mono" style="font-size:11px;color:rgba(233,233,237,.4)">Jun 2025 – Feb 2026 · Remote</span>
+              </div>
+              <div style="font-size:13px;color:rgba(233,233,237,.7);line-height:1.6;margin-top:8px;max-width:72ch">
+                Led development on enterprise e-commerce platforms, automation systems, and API services across a diverse stack. Built Laravel/Lunar storefronts with payment and shipping integrations, TypeScript microservices (FedEx wrapper, RFC 9421 signature verification), and Python/Scrapy platforms with ML-augmented parsing. CI/CD via GitHub Actions and Docker.
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">
+                <span class="tag tag-outline">PHP</span><span class="tag tag-outline">Laravel</span><span class="tag tag-outline">Lunar</span><span class="tag tag-outline">TypeScript</span><span class="tag tag-outline">Python</span><span class="tag tag-outline">Docker</span>
+              </div>
+            </div>
+          </div>
 
-        <section id="education" class="min-h-[500px] flex flex-col items-center justify-center bg-white py-16 px-4">
-            <h2 class="text-4xl font-bold mb-12 text-purple-900 text-center">{{ content.education?.title || "Education Experience" }}</h2>
-            <div v-if="content.education?.stevens" class="flex flex-col md:flex-row items-center bg-purple-50 rounded-xl shadow-lg p-8 w-full max-w-4xl border-l-8 border-purple-400 mb-8">
-                <img src="img/education/stevens_institute_of_technology.png" alt="Stevens Institute of Technology Logo" class="w-28 h-28 object-contain rounded-lg shadow-md mb-6 md:mb-0 md:mr-10 bg-white" />
-                <div>
-                    <h3 class="text-2xl font-bold text-purple-800">{{ content.education.stevens.school }}</h3>
-                    <p class="text-purple-700 font-semibold mb-1">{{ content.education.stevens.degree }} - <span class="italic"><a :href="content.education.stevens.programLink" target="_blank" rel="noopener" class="text-purple-600 hover:text-purple-800 transition">{{ content.education.stevens.programText }}</a></span></p>
-                    <p class="text-purple-600 mb-2">{{ content.education.stevens.period }} <span class="italic">{{ content.education.stevens.status }}</span></p>
-                    <p class="text-gray-800 mb-4">
-                        {{ content.education.stevens.description }}
-                    </p>
-                    <ul class="list-disc list-inside text-purple-900 mb-2">
-                        <li v-for="area in (content.education.stevens.focusAreas || [])" :key="area.title">
-                            <span class="font-semibold">{{ area.title }}</span> {{ area.items }}
-                        </li>
-                    </ul>
-                    <p class="text-gray-700">
-                        {{ content.education.stevens.focusDescription }}
-                    </p>
-                </div>
+          <div style="padding:20px 0;border-bottom:1px solid rgba(233,233,237,.1);display:flex;gap:14px;align-items:flex-start">
+            <img src="img/experience/webfx_logo.jpg" alt="WebFX" class="logo logo-lg">
+            <div style="flex:1">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+                <div style="font:500 16px Inter,sans-serif">WebFX</div>
+                <span style="font-size:12.5px;color:#b5abfc">Senior Developer, Full Stack</span>
+                <span class="mono" style="font-size:11px;color:rgba(233,233,237,.4)">Mar 2020 – May 2025 · Remote</span>
+              </div>
+              <div style="font-size:13px;color:rgba(233,233,237,.7);line-height:1.6;margin-top:8px;max-width:72ch">
+                Progressed from Junior Web Developer to Senior Developer across five years. Delivered web projects primarily on LAMP stack for a diverse client base. Introduced AI development tools and AI security practices to design and interactive development teams. Pioneered DevOps workflows to primary client-facing teams via Docker.
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">
+                <span class="tag tag-outline">PHP</span><span class="tag tag-outline">WordPress</span><span class="tag tag-outline">Drupal</span><span class="tag tag-outline">Magento</span><span class="tag tag-outline">Docker</span>
+              </div>
             </div>
-            <!-- Tech Academy Tile -->
-            <div v-if="content.education?.techAcademy" class="flex flex-col md:flex-row items-center bg-yellow-50 rounded-xl shadow-lg p-8 w-full max-w-4xl border-l-8 border-yellow-400 mb-8">
-                <img src="img/education/tech_academy.png" alt="The Tech Academy Logo" class="w-28 h-28 object-contain rounded-lg shadow-md mb-6 md:mb-0 md:mr-10 bg-white" />
-                <div>
-                    <h3 class="text-2xl font-bold text-yellow-800">{{ content.education.techAcademy.school }}</h3>
-                    <p class="text-yellow-700 font-semibold mb-1">{{ content.education.techAcademy.degree }} - <span class="italic"><a :href="content.education.techAcademy.programLink" target="_blank" rel="noopener" class="text-yellow-600 hover:text-yellow-800 transition">{{ content.education.techAcademy.programText }}</a></span></p>
-                    <p class="text-yellow-600 mb-2">{{ content.education.techAcademy.period }}</p>
-                    <p class="text-gray-800 mb-4 font-semibold">
-                        {{ content.education.techAcademy.descriptionTitle }}
-                    </p>
-                    <ul class="list-disc list-inside text-yellow-900 mb-2">
-                        <li v-for="item in (content.education.techAcademy.items || [])" :key="item">{{ item }}</li>
-                    </ul>
-                    <p class="text-gray-700">
-                        {{ content.education.techAcademy.description }}
-                    </p>
-                </div>
-            </div>
-            <!-- Messiah College Tile -->
-            <div v-if="content.education?.messiahCollege" class="flex flex-col md:flex-row items-center bg-blue-50 rounded-xl shadow-lg p-8 w-full max-w-4xl border-l-8 border-blue-400">
-                <img src="img/education/messiah_college_logo.jpg" alt="Messiah College Logo" class="w-28 h-28 object-contain rounded-lg shadow-md mb-6 md:mb-0 md:mr-10 bg-white" />
-                <div>
-                    <h3 class="text-2xl font-bold text-blue-800">{{ content.education.messiahCollege.school }}</h3>
-                    <p class="text-blue-700 font-semibold mb-1">{{ content.education.messiahCollege.degree }}</p>
-                    <p class="text-blue-600 mb-2">{{ content.education.messiahCollege.period }}</p>
-                    <ul class="list-disc list-inside text-blue-900 mb-2">
-                        <li v-for="item in (content.education.messiahCollege.items || [])" :key="item">{{ item }}</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+          </div>
 
-		<div class="w-full h-40 bg-gradient-to-b from-white via-gray-100 to-secondary"></div>
-       
+          <div style="padding:20px 0;border-bottom:1px solid rgba(233,233,237,.1);display:flex;gap:14px;align-items:flex-start">
+            <img src="img/experience/prosper_it_consulting_logo.jpg" alt="Prosper IT Consulting" class="logo logo-lg">
+            <div style="flex:1">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+                <div style="font:500 16px Inter,sans-serif">Prosper IT Consulting</div>
+                <span style="font-size:12.5px;color:#b5abfc">Software Developer Intern</span>
+                <span class="mono" style="font-size:11px;color:rgba(233,233,237,.4)">Aug 2019 – Dec 2019</span>
+              </div>
+              <div style="font-size:13px;color:rgba(233,233,237,.7);line-height:1.6;margin-top:8px;max-width:72ch">
+                Two engagements. Sprint 1: Python/Django web scraping application with API integration. Sprint 2: C#/ASP.NET web application emphasizing scalable architecture. Agile/Scrum, Git, Azure DevOps.
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">
+                <span class="tag tag-outline">Python</span><span class="tag tag-outline">Django</span><span class="tag tag-outline">C#</span><span class="tag tag-outline">ASP.NET</span>
+              </div>
+            </div>
+          </div>
 
-        
+          <div style="padding:20px 0;display:flex;gap:14px;align-items:flex-start">
+            <img src="img/experience/keystone_services.png" alt="Keystone Human Services" class="logo logo-lg">
+            <div style="flex:1">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+                <div style="font:500 16px Inter,sans-serif">Keystone Human Services</div>
+                <span style="font-size:12.5px;color:#b5abfc">Community Support Professional</span>
+                <span class="mono" style="font-size:11px;color:rgba(233,233,237,.4)">Aug 2019 – Mar 2020</span>
+              </div>
+              <div style="font-size:13px;color:rgba(233,233,237,.7);line-height:1.6;margin-top:8px;max-width:72ch">
+                Clinically oriented support work for adults living with autism, focused on skill development.
+              </div>
+            </div>
+          </div>
 
-        <section id="github" class="w-full flex flex-col md:flex-row items-center justify-center bg-secondary py-16 px-4">
-            <!-- Left: Developer Image -->
-            <div class="md:w-1/2 w-full flex justify-center mb-8 md:mb-0">
-                <img src="img/Image4.jpg" alt="Jacob Stanaford" class="w-72 h-72 object-cover rounded-2xl shadow-lg border-4 border-gray-800" />
-            </div>
-            <!-- Right: Text and GitHub Link -->
-            <div class="md:w-1/2 w-full flex flex-col items-center md:items-start justify-center px-4" v-if="content.github">
-                <h2 class="text-3xl font-bold text-white mb-4 text-center md:text-left">{{ content.github.title }}</h2>
-                <p class="text-lg text-gray-200 mb-6 text-center md:text-left">
-                    {{ content.github.description }}
-                </p>
-                <a :href="content.github.url" target="_blank" rel="noopener" class="flex items-center px-6 py-3 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-lg shadow transition">
-                    <img src="img/github_logo.png" alt="GitHub Logo" class="w-7 h-7 mr-3" />
-                    {{ content.github.buttonText }}
-                </a>
-            </div>
-        </section>
+        </div>
+      </section>
 
-		<div class="w-full h-14 bg-gradient-to-b from-secondary to-gray-100"></div>
-       
+      <!-- ─── EDUCATION ─── -->
+      <section id="education" style="padding:34px 40px;border-bottom:1px solid rgba(233,233,237,.1)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px">
+          <h2 style="font-size:22px;letter-spacing:-.02em;margin:0">Education</h2>
+          <span class="mono" style="font-size:11px;color:rgba(233,233,237,.35)">03 programs</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:18px">
 
-		<section id="about-me" class="w-full flex flex-col-reverse md:flex-row items-center justify-center bg-white py-16 px-4">
-            <!-- Left: Text -->
-            <div class="md:w-1/2 w-full flex flex-col items-center md:items-start justify-center px-4" v-if="content.aboutMe">
-                <h2 class="text-3xl font-bold text-purple-900 mb-4 text-center md:text-left">{{ content.aboutMe.title }}</h2>
-                <p class="text-lg text-gray-800 mb-6 text-center md:text-left">
-                    <template v-for="(paragraph, index) in content.aboutMe.paragraphs" :key="index">
-                        {{ paragraph }}
-                        <br v-if="index < content.aboutMe.paragraphs.length - 1"><br v-if="index < content.aboutMe.paragraphs.length - 1">
-                    </template>
-                    <br><br>
-                    <a :href="content.aboutMe.resumeUrl" target="_blank" rel="noopener" class="inline-block mt-2 px-5 py-2 bg-purple-200 text-purple-900 font-semibold rounded hover:bg-purple-300 transition">
-                        {{ content.aboutMe.resumeText }}
-                    </a>
-                </p>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <img src="img/education/stevens_institute_of_technology.png" alt="Stevens Institute of Technology" class="logo logo-lg">
+            <div style="flex:1">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+                <div style="font:500 16px Inter,sans-serif">Stevens Institute of Technology</div>
+                <span class="tag tag-accent">In progress</span>
+              </div>
+              <div style="font-size:12.5px;color:rgba(233,233,237,.6);margin-top:3px">M.S. Computer Science · Fall 2023 – Present · 4.0 GPA</div>
+              <div style="font-size:13px;color:rgba(233,233,237,.7);line-height:1.6;margin-top:6px;max-width:72ch">
+                Coursework focused on software architecture, applied back to production systems at work.
+              </div>
             </div>
-            <!-- Right: Image -->
-            <div class="md:w-1/2 w-full flex justify-center mb-8 md:mb-0">
-                <img src="img/Image2.jpg" alt="Jacob Stanaford" class="w-[31.5rem] h-[31.5rem] object-cover rounded-2xl shadow-lg border-4 border-purple-200" />
-            </div>
-        </section>
+          </div>
 
-		<div class="w-full h-40 bg-gradient-to-b from-white via-grey-100 to-secondary"></div>
-       
-        <section id="contact" class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-secondary to-primary py-20 px-4" v-if="content.contact">
-            <h2 class="text-4xl font-bold text-purple-100 mb-8 text-center">{{ content.contact.title }}</h2>
-            <p class="text-lg text-gray-300 mb-10 text-center max-w-xl">
-                {{ content.contact.description }}
-            </p>
-            <div class="flex flex-col md:flex-row gap-8">
-                <!-- LinkedIn CTA -->
-                <a :href="content.contact.linkedin.url" target="_blank" rel="noopener"
-                   class="flex items-center px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg shadow-lg transition text-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-3" role="img" aria-label="LinkedIn">
-                        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
-                    </svg>
-                    {{ content.contact.linkedin.text }}
-                </a>
-                <!-- Email CTA -->
-                <a :href="content.contact.email.url"
-                   class="flex items-center px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg shadow-lg transition text-xl">
-                    <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 12H8m8 0l-8-8m8 8l-8 8" />
-                    </svg>
-                    {{ content.contact.email.text }}
-                </a>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <img src="img/education/tech_academy.png" alt="The Tech Academy" class="logo logo-lg">
+            <div style="flex:1">
+              <div style="font:500 16px Inter,sans-serif">The Tech Academy</div>
+              <div style="font-size:12.5px;color:rgba(233,233,237,.6);margin-top:3px">Software Developer Bootcamp · Sept 2019 – Dec 2019</div>
+              <div style="font-size:13px;color:rgba(233,233,237,.7);line-height:1.6;margin-top:6px;max-width:72ch">
+                Fifteen-week intensive bootcamp covering full-stack web development with Python/Django, HTML, CSS, JavaScript, and SQL. Git, GitHub, Agile/Scrum/DevOps methodologies. Capstone project for real-world experience.
+              </div>
             </div>
-            <p class="mt-10 text-gray-400 text-sm text-center">
-                {{ content.contact.closing }}
-            </p>
-        </section>
-		
-		<div class="w-full h-40 bg-gradient-to-b from-primary via-secondary to-secondary"></div>
-		
-		<!-- Three.js Technology Network Visualization (hidden for now - revisit later) -->
-		<section id="tech-visualization" class="hidden relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-secondary via-primary to-secondary py-20 px-4 overflow-hidden">
-            <div class="relative z-10 text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-purple-100">{{ content.threeVisualization?.title || "Technology Ecosystem" }}</h2>
-                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-                    {{ content.threeVisualization?.description || "An interactive visualization of the technologies and frameworks I work with, showing their relationships and usage across projects." }}
-                </p>
+          </div>
+
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <img src="img/education/messiah_college_logo.jpg" alt="Messiah College" class="logo logo-lg">
+            <div style="flex:1">
+              <div style="font:500 16px Inter,sans-serif">Messiah College</div>
+              <div style="font-size:12.5px;color:rgba(233,233,237,.6);margin-top:3px">B.S. Music Education K-12 · Aug 2015 – May 2019 · 3.55 GPA, cum laude</div>
+              <div style="font-size:13px;color:rgba(233,233,237,.7);line-height:1.6;margin-top:6px;max-width:72ch">
+                Concentration in vocal studies and piano. Certified Educator in the Commonwealth of Pennsylvania. The teaching background continues to shape how I collaborate, mentor, and communicate technical work to non-technical stakeholders.
+              </div>
             </div>
-            <div id="three-container" class="relative w-full max-w-6xl h-[600px] mx-auto rounded-2xl overflow-hidden shadow-2xl border-2 border-purple-500/30">
-                <canvas class="w-full h-full"></canvas>
-                <div v-if="loading" class="absolute inset-0 flex items-center justify-center bg-primary/80">
-                    <p class="text-purple-200 text-xl">Loading visualization...</p>
-                </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─── WORK / PROJECTS ─── -->
+      <section id="work" style="padding:34px 40px;border-bottom:1px solid rgba(233,233,237,.1)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px">
+          <h2 style="font-size:22px;letter-spacing:-.02em;margin:0">Work</h2>
+          <span class="mono" style="font-size:11px;color:rgba(233,233,237,.35)">06 projects</span>
+        </div>
+        <div class="marquee" aria-label="Technology and skills marquee" style="margin-bottom:18px;padding:2px 0">
+          <div class="marquee-track">
+            <span class="tag tag-accent">AWS</span><span class="tag tag-outline">GCP</span><span class="tag tag-outline">Azure</span><span class="tag tag-accent">Terraform</span><span class="tag tag-accent">GitHub Actions</span><span class="tag tag-accent">Docker</span><span class="tag tag-outline">Docker Compose</span><span class="tag tag-outline">CI/CD</span><span class="tag tag-outline">Infrastructure as Code</span><span class="tag tag-outline">Jenkins</span><span class="tag tag-outline">Ansible</span><span class="tag tag-outline">Cloudflare</span><span class="tag tag-outline">Nginx</span><span class="tag tag-outline">ECS Fargate</span><span class="tag tag-outline">Aurora</span><span class="tag tag-outline">Lambda</span><span class="tag tag-outline">IAM</span><span class="tag tag-outline">Secrets Manager</span><span class="tag tag-outline">CloudWatch</span><span class="tag tag-outline">API Gateway</span><span class="tag tag-accent">PHP</span><span class="tag tag-outline">JavaScript</span><span class="tag tag-accent">TypeScript</span><span class="tag tag-outline">Python</span><span class="tag tag-outline">C#</span><span class="tag tag-outline">Bash</span><span class="tag tag-outline">SQL</span><span class="tag tag-outline">HTML</span><span class="tag tag-outline">CSS</span><span class="tag tag-outline">PowerShell</span><span class="tag tag-outline">YAML</span><span class="tag tag-outline">Liquid</span><span class="tag tag-accent">Laravel</span><span class="tag tag-outline">Laravel Horizon</span><span class="tag tag-outline">OpenSwoole</span><span class="tag tag-outline">.NET Framework 4.8</span><span class="tag tag-outline">.NET 10</span><span class="tag tag-outline">ASP.NET MVC</span><span class="tag tag-outline">ASP.NET Core</span><span class="tag tag-outline">Entity Framework</span><span class="tag tag-outline">Django</span><span class="tag tag-outline">FastAPI</span><span class="tag tag-outline">Flask</span><span class="tag tag-outline">Express.js</span><span class="tag tag-outline">Node.js</span><span class="tag tag-accent">React</span><span class="tag tag-outline">Angular</span><span class="tag tag-outline">Vue.js</span><span class="tag tag-outline">Electron</span><span class="tag tag-outline">Filament</span><span class="tag tag-outline">Livewire</span><span class="tag tag-outline">Tailwind</span><span class="tag tag-outline">Vite</span><span class="tag tag-outline">Scrapy</span><span class="tag tag-outline">Playwright</span><span class="tag tag-outline">Beautiful Soup</span><span class="tag tag-accent">MySQL</span><span class="tag tag-outline">MariaDB</span><span class="tag tag-outline">PostgreSQL</span><span class="tag tag-outline">SQL Server</span><span class="tag tag-outline">SQLite</span><span class="tag tag-outline">Aurora Serverless v2</span><span class="tag tag-outline">Meilisearch</span><span class="tag tag-accent">Claude Code</span><span class="tag tag-accent">MCP</span><span class="tag tag-outline">Cursor</span><span class="tag tag-outline">GitHub Copilot</span><span class="tag tag-outline">Gemini</span><span class="tag tag-outline">Llama</span><span class="tag tag-outline">Multi-Agent Orchestration</span><span class="tag tag-outline">AI-Assisted Engineering</span><span class="tag tag-accent">WordPress</span><span class="tag tag-outline">WooCommerce</span><span class="tag tag-outline">Shopify</span><span class="tag tag-outline">Drupal</span><span class="tag tag-outline">Magento</span><span class="tag tag-outline">Lunar</span><span class="tag tag-outline">REST APIs</span><span class="tag tag-outline">Swagger/OpenAPI</span><span class="tag tag-outline">FedEx API</span><span class="tag tag-outline">Braintree</span><span class="tag tag-outline">Authorize.net</span><span class="tag tag-outline">RFC 9421</span><span class="tag tag-outline">SFTP</span><span class="tag tag-outline">DevOps</span><span class="tag tag-outline">SRE</span><span class="tag tag-outline">Incident Response</span><span class="tag tag-outline">Cloud Architecture</span><span class="tag tag-outline">Observability</span><span class="tag tag-outline">Code Review</span><span class="tag tag-outline">Git</span><span class="tag tag-outline">GitHub</span><span class="tag tag-outline">Bitbucket</span><span class="tag tag-outline">VS Code</span><span class="tag tag-outline">PHPStorm</span><span class="tag tag-outline">Rider</span><span class="tag tag-outline">PyCharm</span><span class="tag tag-outline">Visual Studio</span><span class="tag tag-accent">AWS</span><span class="tag tag-outline">GCP</span><span class="tag tag-outline">Azure</span><span class="tag tag-accent">Terraform</span><span class="tag tag-accent">GitHub Actions</span><span class="tag tag-accent">Docker</span><span class="tag tag-outline">Docker Compose</span><span class="tag tag-outline">CI/CD</span><span class="tag tag-outline">Infrastructure as Code</span><span class="tag tag-outline">Jenkins</span><span class="tag tag-outline">Ansible</span><span class="tag tag-outline">Cloudflare</span><span class="tag tag-outline">Nginx</span><span class="tag tag-outline">ECS Fargate</span><span class="tag tag-outline">Aurora</span><span class="tag tag-outline">Lambda</span><span class="tag tag-outline">IAM</span><span class="tag tag-outline">Secrets Manager</span><span class="tag tag-outline">CloudWatch</span><span class="tag tag-outline">API Gateway</span><span class="tag tag-accent">PHP</span><span class="tag tag-outline">JavaScript</span><span class="tag tag-accent">TypeScript</span><span class="tag tag-outline">Python</span><span class="tag tag-outline">C#</span><span class="tag tag-outline">Bash</span><span class="tag tag-outline">SQL</span><span class="tag tag-outline">HTML</span><span class="tag tag-outline">CSS</span><span class="tag tag-outline">PowerShell</span><span class="tag tag-outline">YAML</span><span class="tag tag-outline">Liquid</span><span class="tag tag-accent">Laravel</span><span class="tag tag-outline">Laravel Horizon</span><span class="tag tag-outline">OpenSwoole</span><span class="tag tag-outline">.NET Framework 4.8</span><span class="tag tag-outline">.NET 10</span><span class="tag tag-outline">ASP.NET MVC</span><span class="tag tag-outline">ASP.NET Core</span><span class="tag tag-outline">Entity Framework</span><span class="tag tag-outline">Django</span><span class="tag tag-outline">FastAPI</span><span class="tag tag-outline">Flask</span><span class="tag tag-outline">Express.js</span><span class="tag tag-outline">Node.js</span><span class="tag tag-accent">React</span><span class="tag tag-outline">Angular</span><span class="tag tag-outline">Vue.js</span><span class="tag tag-outline">Electron</span><span class="tag tag-outline">Filament</span><span class="tag tag-outline">Livewire</span><span class="tag tag-outline">Tailwind</span><span class="tag tag-outline">Vite</span><span class="tag tag-outline">Scrapy</span><span class="tag tag-outline">Playwright</span><span class="tag tag-outline">Beautiful Soup</span><span class="tag tag-accent">MySQL</span><span class="tag tag-outline">MariaDB</span><span class="tag tag-outline">PostgreSQL</span><span class="tag tag-outline">SQL Server</span><span class="tag tag-outline">SQLite</span><span class="tag tag-outline">Aurora Serverless v2</span><span class="tag tag-outline">Meilisearch</span><span class="tag tag-accent">Claude Code</span><span class="tag tag-accent">MCP</span><span class="tag tag-outline">Cursor</span><span class="tag tag-outline">GitHub Copilot</span><span class="tag tag-outline">Gemini</span><span class="tag tag-outline">Llama</span><span class="tag tag-outline">Multi-Agent Orchestration</span><span class="tag tag-outline">AI-Assisted Engineering</span><span class="tag tag-accent">WordPress</span><span class="tag tag-outline">WooCommerce</span><span class="tag tag-outline">Shopify</span><span class="tag tag-outline">Drupal</span><span class="tag tag-outline">Magento</span><span class="tag tag-outline">Lunar</span><span class="tag tag-outline">REST APIs</span><span class="tag tag-outline">Swagger/OpenAPI</span><span class="tag tag-outline">FedEx API</span><span class="tag tag-outline">Braintree</span><span class="tag tag-outline">Authorize.net</span><span class="tag tag-outline">RFC 9421</span><span class="tag tag-outline">SFTP</span><span class="tag tag-outline">DevOps</span><span class="tag tag-outline">SRE</span><span class="tag tag-outline">Incident Response</span><span class="tag tag-outline">Cloud Architecture</span><span class="tag tag-outline">Observability</span><span class="tag tag-outline">Code Review</span><span class="tag tag-outline">Git</span><span class="tag tag-outline">GitHub</span><span class="tag tag-outline">Bitbucket</span><span class="tag tag-outline">VS Code</span><span class="tag tag-outline">PHPStorm</span><span class="tag tag-outline">Rider</span><span class="tag tag-outline">PyCharm</span><span class="tag tag-outline">Visual Studio</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+
+          <a href="https://github.com/jstanaford/laravel-devops" style="border:1px solid rgba(233,233,237,.12);border-radius:8px;padding:18px;text-decoration:none;color:inherit;display:block">
+            <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">DEVOPS · LARAVEL</div>
+            <div style="font:500 17px Inter,sans-serif;margin:8px 0 6px">Laravel DevOps Monorepo</div>
+            <div style="font-size:12.5px;color:rgba(233,233,237,.58);line-height:1.5">Complete toolkit bridging local dev, CI/CD, and remote server management. Release-based deploys, zero-downtime, GitHub Actions integration.</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px">
+              <span class="tag tag-outline">Bash</span><span class="tag tag-outline">Docker</span><span class="tag tag-outline">GitHub Actions</span><span class="tag tag-outline">Laravel</span>
             </div>
-            <div class="mt-8 text-center">
-                <p class="text-gray-400 text-sm max-w-xl mx-auto">
-                    {{ content.threeVisualization?.interactionHint || "Interact: Move your mouse to rotate • Click on technologies to see details" }}
-                </p>
+          </a>
+
+          <a href="https://github.com/jstanaford/webdev-tools" style="border:1px solid rgba(233,233,237,.12);border-radius:8px;padding:18px;text-decoration:none;color:inherit;display:block">
+            <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">TOOLING · .NET</div>
+            <div style="font:500 17px Inter,sans-serif;margin:8px 0 6px">WebTechProfiler</div>
+            <div style="font-size:12.5px;color:rgba(233,233,237,.58);line-height:1.5">ASP.NET Core 8.0 + TailwindCSS web application for profiling web technologies. Docker-containerized with Swagger docs.</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px">
+              <span class="tag tag-outline">ASP.NET Core</span><span class="tag tag-outline">TailwindCSS</span><span class="tag tag-outline">Docker</span>
             </div>
-        </section>
-        
-        <!-- Technology Details Modal -->
-        <transition name="fade">
-            <div v-if="techModalOpen" id="tech-modal" class="fixed inset-0 z-50 flex items-center justify-center px-4" @click.self="closeTechModal">
-                <div class="modal-overlay absolute inset-0 bg-black opacity-75" @click="closeTechModal"></div>
-                <div class="modal-container bg-secondary rounded-2xl shadow-2xl z-50 max-w-3xl w-full max-h-[90vh] overflow-y-auto border-2 border-purple-500/30" @click.stop>
-                    <!-- Modal Header -->
-                    <div class="sticky top-0 bg-secondary/95 backdrop-blur-sm border-b border-purple-500/30 px-6 py-4 flex justify-between items-center">
-                        <h3 class="text-3xl font-bold text-purple-100" v-if="selectedTech">
-                            {{ selectedTech.name }}
-                        </h3>
-                        <button @click="closeTechModal" class="text-gray-400 hover:text-white transition-colors p-2">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    
-                    <!-- Modal Content -->
-                    <div class="px-6 py-6" v-if="selectedTech">
-                        <!-- Technology Description -->
-                        <div class="mb-6">
-                            <p class="text-gray-300 leading-relaxed text-lg">
-                                {{ selectedTech.description }}
-                            </p>
-                        </div>
-                        
-                        <!-- Key Highlights -->
-                        <div v-if="selectedTech.highlights && selectedTech.highlights.length > 0" class="mt-6">
-                            <h4 class="text-xl font-semibold text-purple-200 mb-4">Why I Love This Tech</h4>
-                            <ul class="space-y-3">
-                                <li v-for="(highlight, idx) in selectedTech.highlights" :key="idx" 
-                                    class="flex items-start">
-                                    <svg class="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span class="text-gray-300">{{ highlight }}</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+          </a>
+
+          <a href="https://github.com/jstanaford/electron-local-screenshot-tool" style="border:1px solid rgba(233,233,237,.12);border-radius:8px;padding:18px;text-decoration:none;color:inherit;display:block">
+            <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">TOOLING · ELECTRON</div>
+            <div style="font:500 17px Inter,sans-serif;margin:8px 0 6px">macOS Screenshot Tool</div>
+            <div style="font-size:12.5px;color:rgba(233,233,237,.58);line-height:1.5">Electron app for drag-to-select screen capture with local storage, clipboard, and remote-server upload options. Documented upload API and toast notifications.</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px">
+              <span class="tag tag-outline">Electron</span><span class="tag tag-outline">Node.js</span><span class="tag tag-outline">REST API</span>
             </div>
-        </transition>
+          </a>
+
+          <a href="https://github.com/jstanaford/wp-complyt-integration" style="border:1px solid rgba(233,233,237,.12);border-radius:8px;padding:18px;text-decoration:none;color:inherit;display:block">
+            <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">WORDPRESS</div>
+            <div style="font:500 17px Inter,sans-serif;margin:8px 0 6px">Complyt WooCommerce Integration</div>
+            <div style="font-size:12.5px;color:rgba(233,233,237,.58);line-height:1.5">WordPress plugin that maps WooCommerce orders to Complyt customers for tax compliance. Automatic SKU-based tax code mapping and API integration.</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px">
+              <span class="tag tag-outline">WordPress</span><span class="tag tag-outline">WooCommerce</span><span class="tag tag-outline">PHP</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/jstanaford/wp-bandit" style="border:1px solid rgba(233,233,237,.12);border-radius:8px;padding:18px;text-decoration:none;color:inherit;display:block">
+            <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">WORDPRESS</div>
+            <div style="font:500 17px Inter,sans-serif;margin:8px 0 6px">WP Bandit Equipment Plugin</div>
+            <div style="font-size:12.5px;color:rgba(233,233,237,.58);line-height:1.5">WordPress plugin integrating with the Bandit Chippers API to import and display equipment data. Custom post types, admin controls, and scheduling.</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px">
+              <span class="tag tag-outline">WordPress</span><span class="tag tag-outline">PHP</span><span class="tag tag-outline">REST API</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/jstanaford/Python_MyMoveApp" style="border:1px solid rgba(233,233,237,.12);border-radius:8px;padding:18px;text-decoration:none;color:inherit;display:block">
+            <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">PYTHON</div>
+            <div style="font:500 17px Inter,sans-serif;margin:8px 0 6px">Python MyMoveApp</div>
+            <div style="font-size:12.5px;color:rgba(233,233,237,.58);line-height:1.5">Tkinter-based GUI application for selectively moving text files between directories, with SQLite metadata tracking.</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px">
+              <span class="tag tag-outline">Python</span><span class="tag tag-outline">Tkinter</span><span class="tag tag-outline">SQLite</span>
+            </div>
+          </a>
+
+        </div>
+        <a href="https://github.com/jstanaford" style="text-decoration:none;color:inherit;display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(233,233,237,.12);border-radius:8px;padding:16px 18px;margin-top:12px;background:rgba(145,132,217,.06)">
+          <div>
+            <div style="font:500 16px Inter,sans-serif">More on GitHub</div>
+            <div style="font-size:12.5px;color:rgba(233,233,237,.55)">Additional repositories, code samples, and open-source contributions</div>
+          </div>
+          <span style="color:#9184d9;font-size:18px">→</span>
+        </a>
+      </section>
+
+      <!-- ─── CONTACT ─── -->
+      <section id="contact" style="padding:34px 40px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px">
+          <h2 style="font-size:22px;letter-spacing:-.02em;margin:0">Contact</h2>
+          <span class="mono" style="font-size:11px;color:rgba(233,233,237,.35)">GET IN TOUCH</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+
+          <a href="https://www.linkedin.com/in/jacobstanaford/" target="_blank" rel="noopener" class="contact-card" style="border:1px solid rgba(233,233,237,.12);border-radius:8px;padding:22px 20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,rgba(145,132,217,.04),rgba(145,132,217,0));transition:border-color .18s ease,transform .18s ease,background .18s ease">
+            <span style="width:38px;height:38px;border-radius:8px;background:rgba(145,132,217,.12);display:flex;align-items:center;justify-content:center;color:#9184d9">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8 10H5v9h3v-9zm-1.5-4.75a1.75 1.75 0 100 3.5 1.75 1.75 0 000-3.5zM19 19v-5.4c0-2.61-1.4-3.83-3.27-3.83A2.83 2.83 0 0013 11.1V10h-3v9h3v-4.75c0-1.15.22-2.27 1.65-2.27 1.4 0 1.35 1.34 1.35 2.34V19h3z"/></svg>
+            </span>
+            <div>
+              <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">PROFESSIONAL NETWORK</div>
+              <div style="font:500 17px Inter,sans-serif;margin-top:6px">LinkedIn</div>
+              <div style="font-size:12.5px;color:rgba(233,233,237,.58);line-height:1.5;margin-top:4px">Connect, ask about roles, or start a conversation.</div>
+            </div>
+          </a>
+
+          <a href="img/resource/JacobS_Resume.pdf" target="_blank" rel="noopener" class="contact-card" style="border:1px solid rgba(233,233,237,.12);border-radius:8px;padding:22px 20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,rgba(145,132,217,.04),rgba(145,132,217,0));transition:border-color .18s ease,transform .18s ease,background .18s ease">
+            <span style="width:38px;height:38px;border-radius:8px;background:rgba(145,132,217,.12);display:flex;align-items:center;justify-content:center;color:#9184d9">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+            </span>
+            <div>
+              <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">CREDENTIALS</div>
+              <div style="font:500 17px Inter,sans-serif;margin-top:6px">Résumé</div>
+              <div style="font-size:12.5px;color:rgba(233,233,237,.58);line-height:1.5;margin-top:4px">Full work history, education, and skills (PDF).</div>
+            </div>
+          </a>
+
+          <a href="mailto:jacobstanafordprofessional@gmail.com?subject=Portfolio%20Inquiry" class="contact-card" style="border:1px solid rgba(233,233,237,.12);border-radius:8px;padding:22px 20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,rgba(145,132,217,.04),rgba(145,132,217,0));transition:border-color .18s ease,transform .18s ease,background .18s ease">
+            <span style="width:38px;height:38px;border-radius:8px;background:rgba(145,132,217,.12);display:flex;align-items:center;justify-content:center;color:#9184d9">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </span>
+            <div>
+              <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">EMAIL</div>
+              <div style="font:500 17px Inter,sans-serif;margin-top:6px">Send a Message</div>
+              <div style="font-size:12.5px;color:rgba(233,233,237,.58);line-height:1.5;margin-top:4px">Direct route for projects and inquiries.</div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ─── FOOTER ─── -->
+      <footer style="padding:24px 40px;border-top:1px solid rgba(233,233,237,.1);display:flex;justify-content:space-between;align-items:center;color:rgba(233,233,237,.4);font-size:12px">
+        <div>© <span id="year">2026</span> Jacob Stanaford</div>
+        <div class="mono" style="font-size:10.5px;letter-spacing:.14em">BUILT BY A TRUE NERD</div>
+      </footer>
+
     </main>
-    
-    <footer class="bg-secondary py-8">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <p class="text-gray-400 mb-2">© <span id="footer-year"></span> Jacob Stanaford. All rights reserved.</p>
-            <p class="text-gray-500 text-sm">
-                Built by a true nerd
-            </p>
-        </div>
-    </footer>
-    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
-    </div>
-    <!-- Vue app script -->
-    <script src="assets/js/app-vue.js?v=2.0.0"></script>
-    <!-- Vue transitions CSS -->
-    <style>
-        .fade-enter-active, .fade-leave-active {
-            transition: opacity 0.3s ease;
-        }
-        .fade-enter-from, .fade-leave-to {
-            opacity: 0;
-        }
-        .slide-fade-enter-active {
-            transition: all 0.3s ease-out;
-        }
-        .slide-fade-leave-active {
-            transition: all 0.2s ease-in;
-        }
-        .slide-fade-enter-from {
-            transform: translateX(20px);
-            opacity: 0;
-        }
-        .slide-fade-leave-to {
-            transform: translateX(-20px);
-            opacity: 0;
-        }
-        
-        /* Modal Styles */
-        .modal-container {
-            scrollbar-width: thin;
-            scrollbar-color: rgba(147, 51, 234, 0.5) rgba(0, 0, 0, 0.1);
-        }
-        
-        .modal-container::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        .modal-container::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-        }
-        
-        .modal-container::-webkit-scrollbar-thumb {
-            background: rgba(147, 51, 234, 0.5);
-            border-radius: 4px;
-        }
-        
-        .modal-container::-webkit-scrollbar-thumb:hover {
-            background: rgba(147, 51, 234, 0.7);
-        }
-    </style>
+  </div>
+</div>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
