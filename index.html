@@ -587,6 +587,7 @@ html{background:#0e0f18}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .marquee .tag{flex:0 0 auto;white-space:nowrap}
 .contact-card:hover{border-color:rgba(145,132,217,.6)!important;transform:translateY(-2px);background:linear-gradient(180deg,rgba(145,132,217,.09),rgba(145,132,217,.02))!important}
+.contact-card-mini:hover{border-color:rgba(145,132,217,.5)!important;background:rgba(145,132,217,.05)}
 .term-body::-webkit-scrollbar{width:10px}
 .term-body::-webkit-scrollbar-track{background:rgba(145,132,217,.06);border-radius:8px}
 .term-body::-webkit-scrollbar-thumb{background:rgba(145,132,217,.45);border-radius:8px;border:2px solid rgba(22,24,38,.6)}
@@ -603,7 +604,7 @@ html{background:#0e0f18}
     <div style="display:flex;align-items:center;gap:12px">
       <span style="display:block;width:22px;height:1px;background:#9184d9" class="sweepline"></span>
       <span style="font:500 14px Inter,sans-serif;letter-spacing:-.01em">Jacob Stanaford</span>
-      <span class="mono" style="font-size:10.5px;letter-spacing:.14em;color:rgba(233,233,237,.4)">SOFTWARE ENGINEER</span>
+      <span class="mono" style="font-size:10.5px;letter-spacing:.14em;color:rgba(233,233,237,.4)">SOFTWARE ENGINEER + CONSULTANT</span>
     </div>
     <div style="display:flex;align-items:center;gap:24px">
       <div style="display:flex;gap:22px;font:400 13px Inter,sans-serif;color:rgba(233,233,237,.62)">
@@ -611,6 +612,7 @@ html{background:#0e0f18}
         <a href="#experience" style="color:inherit;text-decoration:none">Experience</a>
         <a href="#education" style="color:inherit;text-decoration:none">Education</a>
         <a href="#work" style="color:inherit;text-decoration:none">Work</a>
+        <a href="services/" style="color:inherit;text-decoration:none">Services</a>
         <a href="#contact" style="color:inherit;text-decoration:none">Contact</a>
       </div>
       <a href="#contact" class="btn btn-primary" style="text-decoration:none;height:32px;padding:0 14px;font-size:13px">Contact</a>
@@ -640,10 +642,10 @@ html{background:#0e0f18}
 
       <!-- ─── NOW ─── -->
       <section id="now" style="padding:34px 40px;border-bottom:1px solid rgba(233,233,237,.1)">
-        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px">
           <h2 style="font-size:22px;letter-spacing:-.02em;margin:0">Welcome</h2>
-          <span class="mono" style="font-size:11px;color:rgba(233,233,237,.35)">SNAPSHOT</span>
         </div>
+        <div class="mono" style="font-size:11px;letter-spacing:.14em;color:#9184d9;margin-bottom:16px">CLOUD ARCHITECTURE · DEVOPS · BACKEND ENGINEERING</div>
         <div style="border:1px solid rgba(233,233,237,.14);border-radius:8px;overflow:hidden;background:#12131f">
           <div style="display:flex;align-items:center;gap:7px;padding:9px 13px;border-bottom:1px solid rgba(233,233,237,.1)">
             <span style="width:9px;height:9px;border-radius:50%;background:#595d6c;display:block"></span>
@@ -937,39 +939,56 @@ html{background:#0e0f18}
           <h2 style="font-size:22px;letter-spacing:-.02em;margin:0">Contact</h2>
           <span class="mono" style="font-size:11px;color:rgba(233,233,237,.35)">GET IN TOUCH</span>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
 
-          <a href="https://www.linkedin.com/in/jacobstanaford/" target="_blank" rel="noopener" class="contact-card" style="border:1px solid rgba(233,233,237,.12);border-radius:8px;padding:22px 20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,rgba(145,132,217,.04),rgba(145,132,217,0));transition:border-color .18s ease,transform .18s ease,background .18s ease">
-            <span style="width:38px;height:38px;border-radius:8px;background:rgba(145,132,217,.12);display:flex;align-items:center;justify-content:center;color:#9184d9">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8 10H5v9h3v-9zm-1.5-4.75a1.75 1.75 0 100 3.5 1.75 1.75 0 000-3.5zM19 19v-5.4c0-2.61-1.4-3.83-3.27-3.83A2.83 2.83 0 0013 11.1V10h-3v9h3v-4.75c0-1.15.22-2.27 1.65-2.27 1.4 0 1.35 1.34 1.35 2.34V19h3z"/></svg>
+        <!-- Primary CTAs: two large cards for consulting funnel -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+
+          <a href="services/" class="contact-card" style="border:1px solid rgba(145,132,217,.35);border-radius:8px;padding:26px 24px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:12px;background:linear-gradient(180deg,rgba(145,132,217,.08),rgba(145,132,217,.02));transition:border-color .18s ease,transform .18s ease,background .18s ease">
+            <span style="width:42px;height:42px;border-radius:8px;background:rgba(145,132,217,.16);display:flex;align-items:center;justify-content:center;color:#9184d9">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>
             </span>
             <div>
-              <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">PROFESSIONAL NETWORK</div>
-              <div style="font:500 17px Inter,sans-serif;margin-top:6px">LinkedIn</div>
-              <div style="font-size:12.5px;color:rgba(233,233,237,.58);line-height:1.5;margin-top:4px">Connect, ask about roles, or start a conversation.</div>
+              <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">CONSULTING</div>
+              <div style="font:600 19px Inter,sans-serif;margin-top:6px">View Services</div>
+              <div style="font-size:13px;color:rgba(233,233,237,.65);line-height:1.55;margin-top:5px">See the kinds of projects I take on.</div>
             </div>
           </a>
 
-          <a href="img/resource/JacobS_Resume.pdf" target="_blank" rel="noopener" class="contact-card" style="border:1px solid rgba(233,233,237,.12);border-radius:8px;padding:22px 20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,rgba(145,132,217,.04),rgba(145,132,217,0));transition:border-color .18s ease,transform .18s ease,background .18s ease">
-            <span style="width:38px;height:38px;border-radius:8px;background:rgba(145,132,217,.12);display:flex;align-items:center;justify-content:center;color:#9184d9">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+          <a href="mailto:jacobstanafordprofessional@gmail.com?subject=Project%20Inquiry" class="contact-card" style="border:1px solid rgba(145,132,217,.35);border-radius:8px;padding:26px 24px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:12px;background:linear-gradient(180deg,rgba(145,132,217,.08),rgba(145,132,217,.02));transition:border-color .18s ease,transform .18s ease,background .18s ease">
+            <span style="width:42px;height:42px;border-radius:8px;background:rgba(145,132,217,.16);display:flex;align-items:center;justify-content:center;color:#9184d9">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
             </span>
             <div>
-              <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">CREDENTIALS</div>
-              <div style="font:500 17px Inter,sans-serif;margin-top:6px">Résumé</div>
-              <div style="font-size:12.5px;color:rgba(233,233,237,.58);line-height:1.5;margin-top:4px">Full work history, education, and skills (PDF).</div>
+              <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">DIRECT MESSAGE</div>
+              <div style="font:600 19px Inter,sans-serif;margin-top:6px">Start a Conversation</div>
+              <div style="font-size:13px;color:rgba(233,233,237,.65);line-height:1.55;margin-top:5px">Have a project, infrastructure problem, or development bottleneck?</div>
             </div>
           </a>
 
-          <a href="mailto:jacobstanafordprofessional@gmail.com?subject=Portfolio%20Inquiry" class="contact-card" style="border:1px solid rgba(233,233,237,.12);border-radius:8px;padding:22px 20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,rgba(145,132,217,.04),rgba(145,132,217,0));transition:border-color .18s ease,transform .18s ease,background .18s ease">
-            <span style="width:38px;height:38px;border-radius:8px;background:rgba(145,132,217,.12);display:flex;align-items:center;justify-content:center;color:#9184d9">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </div>
+
+        <!-- Secondary: compact tiles for LinkedIn / GitHub / Résumé -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+
+          <a href="https://www.linkedin.com/in/jacobstanaford/" target="_blank" rel="noopener" class="contact-card-mini" style="border:1px solid rgba(233,233,237,.1);border-radius:8px;padding:14px 16px;text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;transition:border-color .18s ease,background .18s ease">
+            <span style="width:28px;height:28px;flex-shrink:0;border-radius:6px;background:rgba(145,132,217,.1);display:flex;align-items:center;justify-content:center;color:#9184d9">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8 10H5v9h3v-9zm-1.5-4.75a1.75 1.75 0 100 3.5 1.75 1.75 0 000-3.5zM19 19v-5.4c0-2.61-1.4-3.83-3.27-3.83A2.83 2.83 0 0013 11.1V10h-3v9h3v-4.75c0-1.15.22-2.27 1.65-2.27 1.4 0 1.35 1.34 1.35 2.34V19h3z"/></svg>
             </span>
-            <div>
-              <div class="mono" style="font-size:10px;letter-spacing:.14em;color:#9184d9">EMAIL</div>
-              <div style="font:500 17px Inter,sans-serif;margin-top:6px">Send a Message</div>
-              <div style="font-size:12.5px;color:rgba(233,233,237,.58);line-height:1.5;margin-top:4px">Direct route for projects and inquiries.</div>
-            </div>
+            <div style="font:500 14px Inter,sans-serif">LinkedIn</div>
+          </a>
+
+          <a href="https://github.com/jstanaford" target="_blank" rel="noopener" class="contact-card-mini" style="border:1px solid rgba(233,233,237,.1);border-radius:8px;padding:14px 16px;text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;transition:border-color .18s ease,background .18s ease">
+            <span style="width:28px;height:28px;flex-shrink:0;border-radius:6px;background:rgba(145,132,217,.1);display:flex;align-items:center;justify-content:center;color:#9184d9">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.64.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.56 9.56 0 0112 6.8c.85.004 1.71.11 2.5.34 1.9-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>
+            </span>
+            <div style="font:500 14px Inter,sans-serif">GitHub</div>
+          </a>
+
+          <a href="img/resource/JacobS_Resume.pdf" target="_blank" rel="noopener" class="contact-card-mini" style="border:1px solid rgba(233,233,237,.1);border-radius:8px;padding:14px 16px;text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;transition:border-color .18s ease,background .18s ease">
+            <span style="width:28px;height:28px;flex-shrink:0;border-radius:6px;background:rgba(145,132,217,.1);display:flex;align-items:center;justify-content:center;color:#9184d9">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+            </span>
+            <div style="font:500 14px Inter,sans-serif">Résumé</div>
           </a>
 
         </div>
