@@ -15,3 +15,6 @@ npm-debug.log*
 # Temp files
 *.tmp
 *.bak
+
+# Legacy employer project data: kept locally, never published
+assets/data/
