@@ -626,6 +626,14 @@ html{background:#0e0f18}
   section {
     padding: 24px 20px !important;
   }
+  /* Profile photo: shrink to roughly half size, centered, with a subtle darker frame */
+  aside > div[style*="background:#161826"] {
+    max-width: 200px !important;
+    margin: 0 auto !important;
+    padding: 10px !important;
+    background: #12131f !important;
+    border: 1px solid rgba(233,233,237,.08) !important;
+  }
   /* Work project grid: 2-col -> 1-col */
   section#work div[style*="grid-template-columns:1fr 1fr"] {
     grid-template-columns: 1fr !important;
