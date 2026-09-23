@@ -593,6 +593,86 @@ html{background:#0e0f18}
 .term-body::-webkit-scrollbar-thumb{background:rgba(145,132,217,.45);border-radius:8px;border:2px solid rgba(22,24,38,.6)}
 .term-body::-webkit-scrollbar-thumb:hover{background:rgba(145,132,217,.7)}
 .term-body{scrollbar-color:rgba(145,132,217,.55) rgba(145,132,217,.08);scrollbar-width:thin}
+
+/* Mobile responsive layout — added 2026-09-23 */
+@media (max-width: 900px) {
+  /* Root sidebar+main grid: stack vertically */
+  div[style*="grid-template-columns:330px 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Sidebar: unstick, unpin, restyle borders */
+  aside[style*="position:sticky"] {
+    position: static !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    padding: 24px 20px !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(233,233,237,.1) !important;
+  }
+  /* Top nav: tighter horizontal padding */
+  div[style*="position:sticky"][style*="height:58px"] {
+    padding: 0 20px !important;
+  }
+  /* Top-nav link row: tighter gap and font */
+  div[style*="gap:22px"][style*="font:400 13px Inter"] {
+    gap: 14px !important;
+    font-size: 12px !important;
+  }
+}
+@media (max-width: 640px) {
+  /* Section padding tighter for phone */
+  section {
+    padding: 24px 20px !important;
+  }
+  /* Work project grid: 2-col -> 1-col */
+  section#work div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Contact secondary tier: 3-col -> 2-col */
+  section#contact div[style*="grid-template-columns:1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  /* Services page process grid: 2-col -> 1-col */
+  div[style*="grid-template-columns:1fr 1fr"][style*="gap:14px"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Terminal: smaller font + tighter padding */
+  #term-body {
+    font-size: 11.5px !important;
+    padding: 12px 14px !important;
+  }
+  /* Marquee pill font shrink */
+  .marquee .tag {
+    font-size: 11px !important;
+  }
+  /* Hero H1 shrink (services page) */
+  section h1 {
+    font-size: 28px !important;
+  }
+  /* Top nav: hide the mono subtitle label to free space */
+  div[style*="height:58px"] span.mono[style*="letter-spacing:.14em"] {
+    display: none !important;
+  }
+  /* Nav links: tighter still */
+  div[style*="gap:22px"][style*="font:400 13px Inter"] {
+    gap: 12px !important;
+    font-size: 11.5px !important;
+  }
+}
+@media (max-width: 430px) {
+  /* Contact secondary: fully stack */
+  section#contact div[style*="grid-template-columns:1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Top nav: minimal horizontal padding */
+  div[style*="position:sticky"][style*="height:58px"] {
+    padding: 0 14px !important;
+  }
+  /* Nav links compete for space here — hide them; Contact button + logo stay */
+  div[style*="gap:22px"][style*="font:400 13px Inter"] {
+    display: none !important;
+  }
+}
 </style>
 </head>
 <body style="background:var(--color-bg);color:var(--color-text)">
