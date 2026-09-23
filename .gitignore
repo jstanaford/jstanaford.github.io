@@ -18,3 +18,6 @@ npm-debug.log*
 
 # Legacy employer project data: kept locally, never published
 assets/data/
+
+# Legacy site assets moved out of the published tree, kept locally
+_archive/
